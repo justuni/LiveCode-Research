@@ -1,0 +1,1 @@
+HeartFailureClinic	Encounter	openEHR-EHR-COMPOSITION.encounter.v1	en	US	Silvia Blake		Hospital	HOSPITAL-NS	HOSPITAL-NS

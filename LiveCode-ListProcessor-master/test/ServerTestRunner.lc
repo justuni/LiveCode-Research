@@ -1,0 +1,18 @@
+#!/Users/peter/Code/LiveCodeServer/livecode
+#coding:utf-8
+
+set the outputLineEndings to "lf"
+set the outputTextEncoding to "utf8"
+
+set the defaultFolder to "/Users/peter/VMShare/LiveCode/LiveCode-ListProcessor/test/"
+
+start using stack "/Users/peter/VMShare/Code/LiveCode/LiveCode-MiniTest/MiniTest.livecode"
+start using stack "../ListProcessor.livecode"
+
+MT.startTestRun
+start using stack "test/testListProcessor.livecode"
+stop using stack "testListProcessor"
+delete stack "testListProcessor"
+
+stop using stack "MiniTest"
+delete stack "MiniTest"

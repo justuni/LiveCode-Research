@@ -1,0 +1,10 @@
+# Don't sync build folder
+/builds
+
+# Misc
+.env
+
+# workspace files are user-specific
+*.sublime-workspace
+
+/sample\ songs

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="128"
+   height="128"
+   viewBox="0 0 128 128"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="ODCG_icon.svg">
+  <title
+     id="title4444">OneDice Character Generator Icon</title>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.25"
+     inkscape:cx="-9.8126571"
+     inkscape:cy="72.280173"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1304"
+     inkscape:window-height="746"
+     inkscape:window-x="54"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <defs
+     id="defs4">
+    <inkscape:perspective
+       id="perspective4140"
+       inkscape:persp3d-origin="107.79905 : 11.980816 : 1"
+       inkscape:vp_z="286.42697 : 72.14821 : 1"
+       inkscape:vp_y="0 : 2820.3466 : 0"
+       inkscape:vp_x="-70.828879 : 72.14821 : 1"
+       sodipodi:type="inkscape:persp3d" />
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>OneDice Character Generator Icon</dc:title>
+        <cc:license
+           rdf:resource="" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(0,-924.36216)"
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Ebene 1">
+    <g
+       id="g4425"
+       transform="matrix(-0.81578667,0,0,-0.81578667,64,988.36218)"
+       inkscape:label="Cube:z30.00:x30.00:x30.00:z30.00:x30.00:x0.00">
+      <path
+         id="path4427"
+         d="m -18.30127,9.1506351 0,-86.6025401 86.60254,25 0,86.60254 z"
+         style="fill:#550000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linejoin:round;stroke-opacity:1"
+         inkscape:label="Face:5"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path4429"
+         d="m -68.30127,52.451905 0,-86.60254 50,-43.30127 0,86.6025401 z"
+         style="fill:#aa0000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linejoin:round;stroke-opacity:1"
+         inkscape:label="Face:3"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path4431"
+         d="m 18.30127,77.451905 -86.60254,-25 50,-43.3012699 86.60254,24.9999999 z"
+         style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linejoin:round;stroke-opacity:1"
+         inkscape:label="Face:0"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
+</svg>

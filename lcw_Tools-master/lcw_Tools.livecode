@@ -1,0 +1,52 @@
+﻿script "lcw_Tools"
+--> MetaData
+-
+license: GPLv3
+name: lcw_Tools
+type: home
+version: 0.5
+
+
+--> Project Deps
+-
+getprop project_Deps
+   return "lcw,lcw_Menus"
+end project_Deps
+
+
+--> Start Project
+-
+on project_Init
+   set the cursor to watch
+   set the loc of me to the screenloc
+   
+   put the filename of me into projectHomeStackFile
+   lcw_Start projectHomeStackFile
+   
+   -- these need LCW loaded above
+   put the project_Deps of of me into projectDeps   
+   project_LoadDeps projectDeps, projectHomeStackFile
+   project_LoadModules projectHomeStackFile
+   
+   -- set the project_Start of me to true
+   project_InitialiseFolder projectHomeStackFile
+end project_Init
+
+command lcw_Start projectHomeStackFile
+   put projectHomeStackFile into lcwHomeStackPath
+   set the itemdelimiter to slash
+   put "lcw/lcw.livecode" into item -2 to -1 of lcwHomeStackPath
+   dispatch "project_Init" to stack lcwHomeStackPath
+   -- go to stack lcwHomeStackPath
+end lcw_Start
+
+
+--> Events
+-
+on preOpenStack 
+   if the short name of the defaultstack is not the short name of me then
+      pass preOpenStack
+   else
+      project_Init
+   end if
+end preOpenStack

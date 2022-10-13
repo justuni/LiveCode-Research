@@ -1,0 +1,15 @@
+{
+  "require":
+  {
+  	"properties": ["useTimer"],
+  	"useTimer": {"set": "setUseTimer"},
+  	"handlers": ["setUseTimer"]
+  }
+}
+
+-- author: Hermann Hoch
+-- contact hh@hyperhh.de
+public handler OnClose()
+	set mUseTimer to false
+	cancel timer
+end handler

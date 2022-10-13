@@ -1,0 +1,135 @@
+schema:
+  tables:
+    projects:
+      primary key: id
+      field order: id,name,description
+      fields:
+        id:
+          accepts null: false
+          default value: NULL
+          primary key: true
+          limit:
+          unique: true
+          signed: false
+          meta type: sequence
+          type: sequence
+        description:
+          accepts null: true
+          default value: NULL
+          primary key: false
+          limit:
+          unique: false
+          signed: false
+          meta type: text
+          type: text
+        name:
+          accepts null: false
+          default value: NULL
+          primary key: false
+          limit:
+          unique: false
+          signed: false
+          meta type: text
+          type: text
+    people_todo:
+      primary key:
+      field order: people_id,todo_id
+      fields:
+        todo_id:
+          accepts null: true
+          default value: NULL
+          primary key: false
+          limit:
+          unique: false
+          signed: false
+          meta type: integer
+          type: integer
+        people_id:
+          accepts null: true
+          default value: NULL
+          primary key: false
+          limit:
+          unique: false
+          signed: false
+          meta type: integer
+          type: integer
+    todo_items:
+      primary key: id
+      field order: id,name,completed,project_id,sequence
+      fields:
+        sequence:
+          accepts null: true
+          default value: NULL
+          primary key: false
+          limit:
+          unique: false
+          signed: false
+          meta type: integer
+          type: smallint
+        completed:
+          accepts null: false
+          default value: 0
+          primary key: false
+          limit:
+          unique: false
+          signed: false
+          meta type: boolean
+          type: boolean
+        project_id:
+          accepts null: false
+          default value: NULL
+          primary key: false
+          limit:
+          unique: false
+          signed: false
+          meta type: integer
+          type: integer
+        name:
+          accepts null: false
+          default value: NULL
+          primary key: false
+          limit:
+          unique: false
+          signed: false
+          meta type: text
+          type: text
+        id:
+          accepts null: false
+          default value: NULL
+          primary key: true
+          limit:
+          unique: true
+          signed: false
+          meta type: sequence
+          type: sequence
+    people:
+      primary key: id
+      field order: id,name,email
+      fields:
+        id:
+          accepts null: false
+          default value: NULL
+          primary key: true
+          limit:
+          unique: true
+          signed: false
+          meta type: sequence
+          type: sequence
+        email:
+          accepts null: true
+          default value: NULL
+          primary key: false
+          limit:
+          unique: false
+          signed: false
+          meta type: text
+          type: text
+        name:
+          accepts null: false
+          default value: NULL
+          primary key: false
+          limit:
+          unique: false
+          signed: false
+          meta type: text
+          type: text

@@ -1,0 +1,21 @@
+<?lc
+global gGlobalsA
+
+require "deploy/bladerunner.lc"
+ 
+try   
+   if $0 is not strictly nothing then
+      put the itemDelimiter into tDelim
+      set the itemDelimiter to "="
+      put gGlobalsA["$0"] into tParam0
+      put item -1 of tParam0 into gGlobalsA["$_GET"][(item 1 of tParam0)]
+      set the itemDelimiter to tDelim
+   end if
+   
+catch e
+   write e & CRLF to stdout
+end try
+
+start using stack "deploy/deploy.livecodescript"
+
+

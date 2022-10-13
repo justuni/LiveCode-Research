@@ -1,0 +1,1 @@
+GP Encounter Event - LCR (composition).v2	GP encounter event	openEHR-EHR-COMPOSITION.encounter.v1	en	US	Silvia Blake	9091	Hospital	HOSPITAL-NS	HOSPITAL-NS

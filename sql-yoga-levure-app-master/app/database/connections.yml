@@ -1,0 +1,7 @@
+default connection: local
+connections:
+  local:
+    adaptor: sqlite
+    quote identifiers: false
+    type:
+    file: ./database/to-do.sqlite

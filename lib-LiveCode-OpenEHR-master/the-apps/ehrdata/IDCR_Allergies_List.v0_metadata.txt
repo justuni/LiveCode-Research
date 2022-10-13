@@ -1,0 +1,1 @@
+IDCR Allergies List.v0	Allergies list	openEHR-EHR-COMPOSITION.care_summary.v0	en	US	Silvia Blake	9091	Hospital	HOSPITAL-NS	HOSPITAL-NS

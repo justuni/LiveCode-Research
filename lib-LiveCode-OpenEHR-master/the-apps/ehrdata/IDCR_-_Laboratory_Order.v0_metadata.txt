@@ -1,0 +1,9 @@
+IDCR - Laboratory Order.v0	Laboratory order	openEHR-EHR-COMPOSITION.referral.v0	en	US	Silvia Blake	9091	Hospital	HOSPITAL-NS	HOSPITAL-NS
+templateId	IDCR - Laboratory Order.v0
+compName	Laboratory order
+nodeId	openEHR-EHR-COMPOSITION.referral.v0
+userName	diadem_c4h
+password	ZWxPpbyw
+rootUrl	https://ehrscape.code-4-health.org
+subjectId	9999999000
+aql.compositionId.fromSubjectId	select a/uid/value as compositionId, a/context/start_time/value as start_time from EHR e[ehr_id/value='{ehrid}'] contains COMPOSITION a[{nodeId}] where a/name/value='{compositionname}' order by a/context/start_time/value desc offset 0 limit 1

@@ -1,0 +1,54 @@
+Script "stack_djbLog_"
+
+/*
+# Name: stack "djbLog"
+# ID: stack "djbLog"
+*/
+
+
+### Timber! Logging and Benchmarking Plugin for LiveCode
+### Privacy On by Default
+### https://github.com/speedbump1981/Timber
+
+
+
+on djbLogEntry logType, logSender, logMessage, personalData, benchSignal
+     global djbLog,djbBenchmark
+     local logTarget
+     
+     ### Save the target
+     put the target into logTarget
+     
+     
+     
+     ### Benchmarking
+     switch benchSignal
+          
+          case "start"
+               -- Start Time
+               put milliseconds() into djbBenchmark["start"]
+               put "bench" &tab& "djbLogEntry" &tab& internet date &tab& "Benchmarking started:" && djbBenchmark["start"] &cr after djbLog
+               break
+               
+          case "stop"
+               -- Stop Time
+               put milliseconds() into djbBenchmark["stop"]
+               put "bench" &tab& "djbLogEntry" &tab& internet date &tab& "Benchmarking ended:" && djbBenchmark["stop"] &cr after djbLog
+               
+               put djbBenchmark["stop"] - djbBenchmark["start"] into djbBenchmark["total"]
+               put "bench" &tab& "djbLogEntry" &tab& internet date &tab& "Benchmark duration:" && djbBenchmark["total"] &cr after djbLog
+               break
+               
+          case "lap"
+               -- Laps (Not Supported Yet)
+               
+     end switch
+     
+     
+     ### PII: Append PII if Enabled and not empty
+     if the enablePII of stack "djbLog" is true and personalData is not empty then put " (PII:" && personalData & ")" after logMessage
+     
+     ### Update the Log
+     put logType &tab& logSender && "<" && logTarget &tab& internet date &tab& logMessage &cr after djbLog
+     
+end djbLogEntry

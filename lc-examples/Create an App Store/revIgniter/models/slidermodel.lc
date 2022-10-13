@@ -1,0 +1,46 @@
+<?lc
+put gBASEPATH into gBASEPATH
+
+if gBASEPATH is "gBASEPATH" then
+	put "No direct script access allowed."
+	exit to top
+end if
+
+
+-- getSliderData
+-- DESCRIPTION:
+--    Get the category data from the database
+--    convert it into an array and return it to the controller
+-- PARAMETER:
+--   pGroup: ID of the group to get the featured apps to put in the slider
+-- CHANGES:
+--    08/24/2015 Todd: Created 
+function getSliderData 
+
+  put "1" into tSlider[1]["slideID"]
+  put "slide1.jpg" into tSlider[1]["slideImgURL"]
+  put "thumb1.jpg" into tSlider[1]["thumbImgURL"]
+
+  put "2" into tSlider[2]["slideID"]
+  put "slide2.jpg" into tSlider[2]["slideImgURL"]
+  put "thumb2.jpg" into tSlider[2]["thumbImgURL"]
+
+  put "3" into tSlider[3]["slideID"]
+  put "slide3.jpg" into tSlider[3]["slideImgURL"]
+  put "thumb3.jpg" into tSlider[3]["thumbImgURL"]
+
+  put "4" into tSlider[4]["slideID"]
+  put "slide4.jpg" into tSlider[4]["slideImgURL"]
+  put "thumb4.jpg" into tSlider[4]["thumbImgURL"]
+
+  put "5" into tSlider[5]["slideID"]
+  put "slide5.jpg" into tSlider[5]["slideImgURL"]
+  put "thumb5.jpg" into tSlider[5]["thumbImgURL"]
+  
+
+  return tSlider
+
+end getSliderData
+
+--| END OF sliderModel.lc
+--| Location:  ../models/sliderModel.lc

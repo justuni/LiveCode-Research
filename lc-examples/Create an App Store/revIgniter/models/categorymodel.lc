@@ -1,0 +1,63 @@
+<?lc
+put gBASEPATH into gBASEPATH
+
+if gBASEPATH is "gBASEPATH" then
+	put "No direct script access allowed."
+	exit to top
+end if
+
+
+-- getAppCategories
+-- DESCRIPTION:
+--    Get the category data from the database
+--    convert it into an array and return it to the controller
+-- CHANGES:
+--    08/24/2015 Todd: Created 
+function getAppCategories 
+
+  put "03b1125b-3b83-11e5-bbe2-001e67b6630e" into tAppCategories[1]["catid"]
+  put "Productivity" into tAppCategories[1]["catName"]
+  put "0be31c28-3b83-11e5-bbe2-001e67b6630e" into tAppCategories[2]["catid"]
+  put "Reference" into tAppCategories[2]["catName"]
+  put "14d68f57-3b83-11e5-bbe2-001e67b6630e" into tAppCategories[3]["catid"]
+  put "Social Networking" into tAppCategories[3]["catName"]
+  put "195400f0-3b83-11e5-bbe2-001e67b6630e" into tAppCategories[4]["catid"]
+  put "Sports" into tAppCategories[4]["catName"]
+  put "223014ce-3b83-11e5-bbe2-001e67b6630e" into tAppCategories[5]["catid"]
+  put "Video" into tAppCategories[5]["catName"]
+  put "29485075-3b83-11e5-bbe2-001e67b6630e" into tAppCategories[6]["catid"]
+  put "Weather" into tAppCategories[6]["catName"]
+  put "31e47f5d-3b83-11e5-bbe2-001e67b6630e" into tAppCategories[7]["catid"]
+  put "Business" into tAppCategories[7]["catName"]
+  put "34279553-3b83-11e5-bbe2-001e67b6630e" into tAppCategories[8]["catid"]
+  put "Game" into tAppCategories[8]["catName"]
+  put "3c4129c5-3b83-11e5-bbe2-001e67b6630e" into tAppCategories[9]["catid"]
+  put "Finance" into tAppCategories[9]["catName"]
+  put "5aedc3a4-3b83-11e5-bbe2-001e67b6630e" into tAppCategories[10]["catid"]
+  put "Lifestyle" into tAppCategories[10]["catName"]
+  put "a59752d4-3b83-11e5-bbe2-001e67b6630e" into tAppCategories[11]["catid"]
+  put "Developer Tools" into tAppCategories[11]["catName"]
+  put "aeade9fa-3b83-11e5-bbe2-001e67b6630e" into tAppCategories[12]["catid"]
+  put "Education" into tAppCategories[12]["catName"]
+  put "03b1125b-3b83-11e5-bbe2-001e67b6630e" into tAppCategories[13]["catid"]
+  put "Entertainment" into tAppCategories[13]["catName"]
+  put "da21d98e-3b83-11e5-bbe2-001e67b6630e" into tAppCategories[14]["catid"]
+  put "Health & Fitness" into tAppCategories[14]["catName"]
+  put "e4bdd849-3b83-11e5-bbe2-001e67b6630e" into tAppCategories[15]["catid"]
+  put "Medical" into tAppCategories[15]["catName"]
+  put "eef49900-3b83-11e5-bbe2-001e67b6630e" into tAppCategories[16]["catid"]
+  put "Music" into tAppCategories[16]["catName"]
+  put "f2ad14f8-3b83-11e5-bbe2-001e67b6630e" into tAppCategories[17]["catid"]
+  put "Travel" into tAppCategories[17]["catName"]
+  put "f3beaefb-3b83-11e5-bbe2-001e67b6630e" into tAppCategories[18]["catid"]
+  put "News" into tAppCategories[18]["catName"]
+  put "f6b80d17-3b83-11e5-bbe2-001e67b6630e" into tAppCategories[19]["catid"]
+  put "Utilities" into tAppCategories[19]["catName"]
+
+
+   return tAppCategories
+
+end getAppCategories
+
+--| END OF categoryModel.lc
+--| Location:  ../models/categoryModel.lc

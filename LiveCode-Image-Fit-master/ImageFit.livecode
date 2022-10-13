@@ -1,0 +1,41 @@
+﻿script "ImageFit"
+-------------------------------------------------
+-- imageFit
+-- DESCRIPTION
+-- The handler will fit the image in given size
+-- PARAMETERS
+-- pImageID: the long id of image to scale
+-- pWidth: the maximum width of scaled image
+-- pHeight: the maximum height of scaled image
+-- CHANGES
+-- 19/01/2017 - Gurgen: Created function
+-------------------------------------------------
+command imageFit pImageID, pWidth, pHeight
+   local tLoc
+   local tScale
+   local tHeight, tWidth
+   
+   -- Save the current location
+   put the loc of pImageID into tLoc
+   
+   -- Get the formatted height and width
+   put the formattedWidth of pImageID into tFormattedW
+   put the formattedHeight of pImageID into tFormattedH
+   
+   
+   -- Check to see the directon of scalling
+   if tFormattedH > tFormattedW then
+      put tFormattedH / pHeight into tScale
+      put tFormattedW / tScale into tWidth
+      put pHeight into tHeight
+   else
+      put tFormattedW / pWidth into tScale
+      put tFormattedH / tScale into tHeight
+      put pWidth into tWidth
+   end if
+   
+   -- Scale the image and set the location
+   set the width of pImageID to tWidth
+   set the height of pImageID to tHeight
+   set the loc of pImageID to tLoc
+end imageFit

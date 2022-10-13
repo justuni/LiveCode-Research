@@ -1,0 +1,22 @@
+{
+  "require":
+	{
+		"handlers": ["hhColorToString","hhStringToColor"],
+		"properties": ["fillColor"],
+		"variables": ["FillColor"],
+		"metadata": ["fillColor.editor","fillColor.section"],
+ 		"fillColor.editor": {"value": "com.livecode.pi.colorwithalpha"},
+		"fillColor.section": {"value": "Colors"}
+	}
+}
+
+-- author: Hermann Hoch
+-- contact hh@hyperhh.de
+private handler getFillColor() returns String
+	return hhColorToString(mFillColor)
+end handler
+
+private handler setFillColor(in pColor as String) returns nothing
+	put hhStringToColor(pColor) into mFillColor
+	redraw all
+end handler

@@ -1,0 +1,71 @@
+QUARTAM STATISTICAL FUNCTIONS LIBRARY LICENSE AGREEMENT AND WARRANTY DISCLAIMER
+
+License for Quartam Statistical Functions Library software, including Open Source and Commercial Licensed Editions and all associated files, including installer archives and all related documentation ("Quartam Statistical Functions Library Software")
+
+IMPORTANT -- READ CAREFULLY: By using the Quartam Statistical Functions Library Software you agree to be and are hereby bound by the terms of this License Agreement ("Agreement"). If you do not accept the terms of this Agreement you must not use the Quartam Statistical Functions Library Software; and you must immediately destroy all copies of the Quartam Statistical Functions Library Software.
+
+1. GRANT OF LICENSE:
+
+a) Quartam Software/Jan Schenkel ("Quartam") hereby grant you a non-exclusive non-transferable license to use the Quartam Statistical Functions Library Software subject to the terms set out in this Agreement:
+
+2. THE OPEN SOURCE EDITION
+
+a) The Quartam Statistical Functions Library Software is provided without password protection.
+
+b) You may only use the Open Source Edition strictly according to the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the LGPL License, or (at your option) any later version.
+
+3. THE COMMERCIAL EDITION
+
+a) You may upgrade from the Open Source Edition to a commercially licensed edition of the Quartam Statistical Functions Library Software by paying a fee ("Commercial Edition"). If you are an educational organization as defined by the terms on our web site, you may purchase an Educational Edition ("Educational Edition"), whereby a discount is given and certain additional restrictions applied.  Proof of your Educational status will be required and in the event of any dispute, Quartam reserve the absolute right not to supply, or allow a 3rd party to supply, an Educational edition with associated discount.
+
+b) The Commercial Edition must be used exclusively by a single individual and may not be transferred or loaned to another user. The Licensed User can be changed on completion of a license transfer form and payment of a nominal fee.
+
+c) If you have purchased multiple copies of the software, you must nominate a single individual as a contact ("License Contact"). Other individuals, who do not have to be named, may use copies of the Licensed Edition, up to the maximum number of users purchased with your license, each known as ("Licensed User"). At no time may more individuals use the Licensed Edition than the number of copies purchased with the license. The License Contact is responsible for enforcing this restriction.
+
+d) Quartam will provide basic technical support via email, to the Licensed User in the case of a single user license, or the Licensed Contact in the case of multiple users for 90 days from date of purchase, relating to installation of the product only.  Additional technical support may be provided in the form of a specified number of support incidents, the terms and conditions of this support if offered at thetime of purchase, are published and amended from time to time on our web site.
+
+e) You may not resell, rent, lease or otherwise transfer rights to the Quartam Statistical Functions Library Software for any financial gain or remove any proprietary notices or labels on the Quartam Statistical Functions Library Software.
+
+4.  DISTRIBUTION OF CREATED WORK
+
+a) Permission is hereby granted to distribute your Created Software by any method to anyone, subject the terms of this Section 4 and this Agreement.
+
+b) You may use the Commercial Edition to create statistical analysis features for your own software, and include them in your stacks or self contained executable programs.  You may not give these features to others either free of charge or for a fee under the terms of this Clause 4, these parties must purchase their own Commercial Edition.
+
+c) Copyright notices, as defined in Appendix A, must appear wherever any other copyright or trademark notice appears in any standalone executable that uses this Created Software, as well as in its documentation.
+
+d) You may not give to others either for free or for a charge derivative works based upon the Quartam Statistical Functions Library Software.
+
+5. COMPETITION
+
+a) You must not at any time during the period of this License create or distribute Created Software to be used as a generic development tool in circumstances which Quartam considers will have an appreciable adverse effect on the sales of Quartam Statistical Functions Library Software. This clause is intended to prevent you from using the Quartam Statistical Functions Library Software to produce something that is directly damaging to our business. Any software that you produce that requires the end user to use a Commercial Edition of the Quartam Statistical Functions Library Software will not be considered in competition. In the event that either you or Quartam determines that your software is in such competition, you must withdraw the Created Software immediately. It is agreed that producing software that is in competition with the Quartam Statistical Functions Library Software could cause irreparable harm and injury and Quartam will be entitled, in addition to any other rights and remedies it may have at law or in equity, to an interdict, injuction or other similar relief injoining or restraining you from doing or continuing to distribute such Created Software.
+
+6. TITLE
+
+a) Title, ownership, rights, and intellectual property rights in and to the Quartam Statistical Functions Library Software and all related documentation shall remain with Jan Schenkel. The Quartam Statistical Functions Library Software is protected by the copyright laws of the Kingdom of Belgium and international copyright treaties. For the purposes of this license "intellectual property rights" means any and all patents, copyright, registered or unregistered design rights, trade marks, trade names, know-how, database rights or other intellectual property rights.
+
+7. DISCLAIMER OF WARRANTY
+
+a) THE TOTAL LIABILITY WHICH QUARTAM OWES TO YOU IN RESPECT OF BREACH OF CONTRACT, NEGLIGENCE OR OTHERWISE SHALL, OTHER THAN IN CIRCUMSTANCES IN WHICH SUCH ACTS RESULT IN DEATH OR PERSONAL INJURY IN WHICH CASE LIABILITY SHALL BE UNLIMITED, BE LIMITED TO THE SUM OF 1000 EUR IN RESPECT OF ANY ONE CLAIM OR AGGREGATE OF CLAIMS ARISING IN ANY TWELVE MONTH PERIOD;
+
+b) THE SOFTWARE AND DOCUMENTATION ARE PROVIDED AS IS WITHOUT WARRANTY OF ANY KIND. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, JAN SCHENKEL FURTHER DISCLAIMS ALL WARRANTIES, INCLUDING WITHOUT LIMITATION ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT OF ANY THIRD PARTY INTELLECTUAL PROPERTY RIGHTS;
+
+c) THE ENTIRE RISK ARISING OUT OF THE USE OR PERFORMANCE OF THE SOFTWARE AND DOCUMENTATION REMAINS WITH YOU. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL RUNTIME BE LIABLE FOR ANY CONSEQUENTIAL, INCIDENTAL, DIRECT, INDIRECT, SPECIAL, PUNITIVE, OR OTHER DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION, OR OTHER PECUNIARY LOSS) ARISING OUT OF THIS AGREEMENT OR THE USE OF OR INABILITY TO USE THE PRODUCT, EVEN IF QUARTAM HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES;
+
+8. TERMINATION
+
+a) This license shall terminate automatically if you fail to comply with the limitations described in this Agreement. No notice shall be required from Quartam to effectuate such termination. On termination you must destroy all copies of the Quartam Statistical Functions Library Software including the installer archive and any copies of it therewith. However, such termination does not prejudice the right of Quartam to obtain injunctive, equitable or any other relief in the event of such a breach.
+
+9. GOVERNING LAW
+
+a) This License shall be governed by the laws of the Kingdom of Belgium and in the event of any dispute the parties agree to submit to the non-exclusive jurisdiction of the courts of the canton of Dendermonde.
+
+10. ENTIRE AGREEMENT
+
+a) This License constitutes the entire agreement between Jan Schenkel and you with respect to the subject matter hereof and with the exception of any fraudulent or negligent misrepresentations supersedes all prior oral or written understandings, communications or agreements not specifically incorporated herein. The only exception to this is any explicit terms you may have agreed to before downloading the package from our web site, or any other supplementary terms made clear by us prior to your agreeing to this agreement. any such terms will form part of this agreement. This License may not be modified except in a writing duly signed by an authorized representative of Quartam and you.
+
+APPENDIX A - Required Copyright Notice
+
+You must include the following copyright notice where other such notices appear. In the event that such other notices do not appear in the Created Software, this notice must be placed in a reasonable location.
+
+Portions (c) 2011-2013 Quartam Software/Jan Schenkel, All Rights Reserved Worldwide.

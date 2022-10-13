@@ -1,0 +1,13 @@
+<html>
+
+  <p id="slider"> <? return 1+0 & ". Slider" ?> <img src="[[gConfig["baseUrl"]]][[gData["slider"][1]["slideImgURL"]]]"/>  </p>
+
+
+  <p id="products">2. Products</p>
+
+
+  <p id="categories">3. Categories</p>
+
+</html>
+
+

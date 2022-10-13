@@ -1,0 +1,27 @@
+-- pArray - array to be encoded
+-- pForceRootType - can force the root to be an object if it looks like an array
+-- pPretty - include whitespace
+function ArrayToJSON pArray,pForceRootType,pPretty
+   repeat for each key tKey in pArray
+      if pArray[tKey] is an array then
+         put "}"&ArrayToJSON(pArray[tKey],pForceRootType) into pArray[tKey]
+      else if char 1 of pArray[tKey] = "}" then
+         put "}}" before pArray[tKey]
+      end if
+   end repeat
+   return(mergJSONEncode("pArray",pForceRootType,pPretty))
+end ArrayToJSON
+
+function JSONToArray pJSON
+   local tArray,tKeys
+   repeat for each line tKey in mergJSONDecode(pJSON,"tArray")
+      put JSONToArray(tArray[tKey]) into tArray[tKey]
+   end repeat
+   return tArray
+end JSONToArray
+
+on lcVCSExport
+   if the target is me then
+      set the rect of this stack to 100,100,600,600
+   end if
+end lcVCSExport

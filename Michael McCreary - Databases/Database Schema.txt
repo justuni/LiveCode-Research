@@ -1,0 +1,34 @@
+CREATE TABLE notes
+(
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT NOT NULL,
+  body TEXT NOT NULL,
+  created_date DATETIME NOT NULL,
+  edited_date DATETIME NOT NULL  
+);
+
+CREATE TABLE categories
+(
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT NOT NULL
+);
+
+CREATE TABLE notes_to_categories
+(
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  note_id INTEGER NOT NULL,
+  category_id INTEGER NOT NULL
+);
+
+CREATE INDEX notes_to_categories_note_id ON notes_to_categories(note_id);
+CREATE INDEX notes_to_categories_category_id ON notes_to_categories(category_id);
+
+CREATE TABLE attachments
+(
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  note_id INTEGER NOT NULL,
+  type TEXT NOT NULL,
+  data BLOB NOT NULL
+);
+
+CREATE INDEX attachments_note_id ON attachments(note_id);

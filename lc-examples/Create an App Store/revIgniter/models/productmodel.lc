@@ -1,0 +1,82 @@
+<?lc
+put gBASEPATH into gBASEPATH
+
+if gBASEPATH is "gBASEPATH" then
+	put "No direct script access allowed."
+	exit to top
+end if
+
+
+-- getAppCategories
+-- DESCRIPTION:
+--    Get the category data from the database
+--    convert it into an array and return it to the controller
+-- CHANGES:
+--    08/24/2015 Todd: Created 
+function getAppsByGroup pAppGroup 
+
+  switch pAppGroup
+   case "featured"
+
+  	put "03b1125b-3b83-11e5-bbe2-001e67b6630e" into tApp[1]["appid"]
+  	put "Mind the Place" into tApp[1]["appName"]
+  	put "1.png" into tApp[1]["appImage"]
+ 	put "Productivity" into tApp[1]["appCategory"]
+  
+  	put "14d68f57-3b83-11e5-bbe2-001e67b6630e" into tApp[2]["appid"]
+  	put "Where is the Water?" into tApp[2]["appName"]
+  	put "2.png" into tApp[2]["appImage"]
+  	put "Game" into tApp[2]["appCategory"]
+  
+  	put "0be31c28-3b83-11e5-bbe2-001e67b6630e" into tApp[3]["appid"]
+  	put "Angery Birds Seasons" into tApp[3]["appName"]
+  	put "3.png" into tApp[3]["appImage"]
+  	put "Game" into tApp[3]["appCategory"]
+ 
+  	put "14d68f57-3b83-11e5-bbe2-001e67b6630e" into tApp[4]["appid"]
+  	put "Watcher" into tApp[4]["appName"]
+  	put "4.png" into tApp[4]["appImage"]
+  	put "Utilities" into tApp[4]["appCategory"]
+  	  
+  	put "195400f0-3b83-11e5-bbe2-001e67b6630e" into tApp[5]["appid"]
+  	put "BP" into tApp[5]["appName"]
+  	put "5.png" into tApp[5]["appImage"]
+  	put "Health & Fitness" into tApp[5]["appCategory"]
+  	break
+   case "games"
+
+  	put "03b1125b-3b83-11e5-bbe2-001e67b6630e" into tApp[1]["appid"]
+  	put "Minecraft" into tApp[1]["appName"]
+  	put "7.png" into tApp[1]["appImage"]
+ 	put "Games" into tApp[1]["appCategory"]
+  
+  	put "14d68f57-3b83-11e5-bbe2-001e67b6630e" into tApp[2]["appid"]
+  	put "Driver 7" into tApp[2]["appName"]
+  	put "8.png" into tApp[2]["appImage"]
+  	put "Game" into tApp[2]["appCategory"]
+  
+  	put "0be31c28-3b83-11e5-bbe2-001e67b6630e" into tApp[3]["appid"]
+  	put "Brave" into tApp[3]["appName"]
+  	put "9.png" into tApp[3]["appImage"]
+  	put "Game" into tApp[3]["appCategory"]
+ 
+  	put "14d68f57-3b83-11e5-bbe2-001e67b6630e" into tApp[4]["appid"]
+  	put "Marval Spider Man" into tApp[4]["appName"]
+  	put "11.png" into tApp[4]["appImage"]
+  	put "Game" into tApp[4]["appCategory"]
+  	  
+  	put "195400f0-3b83-11e5-bbe2-001e67b6630e" into tApp[5]["appid"]
+  	put "Sharp Shooter" into tApp[5]["appName"]
+  	put "10.png" into tApp[5]["appImage"]
+  	put "Game" into tApp[5]["appCategory"]
+	break
+   End switch
+   
+   
+   return tApp
+
+end getAppsByGroup
+
+--| END OF productModel.lc
+--| Location:  ../models/productModel.lc
+----------------------------------------------------------------------

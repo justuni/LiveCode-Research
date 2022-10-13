@@ -1,0 +1,14 @@
+libraries:
+  - filename: app_updater.livecodescript
+externals:
+  macos:
+    - filename: mergSparkle.bundle
+      name: mergSparkle
+  windows:
+register components:
+  - key: app updater
+    kind: copy files
+    target platform: package folder
+    destination: update
+    callback stackfile: app_updater_packager.livecodescript
+packager callbacks stackfile: app_updater_packager.livecodescript

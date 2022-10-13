@@ -1,0 +1,19 @@
+{
+  "require":
+  {
+  	"handlers": ["setUseTimer", "nextFullSecond"],
+  	"variables": ["mUseTimer"],
+    "mUseTimer": {"type": "Boolean"}
+  }
+}
+
+-- author: Hermann Hoch
+-- contact hh@hyperhh.de
+public handler OnTimer()
+	if mUseTimer then
+		redraw all
+		schedule timer in nextFullSecond() seconds
+	else
+		cancel timer
+	end if
+end handler

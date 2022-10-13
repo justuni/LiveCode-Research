@@ -1,0 +1,59 @@
+<?lc
+
+_init
+
+private command _init
+   if (version.major() >= 7) then
+      set the outputTextEncoding to "utf-8"
+   end if
+   
+   -- change this to your exact path to the server-side demo stack
+   _useStack "~/stacks/api-demo-server-mariadb.livecode"
+   
+   quit
+end _init
+
+
+private command _useStack pStack
+   if there is NOT a file pStack then
+      _jsonErr ("Stack not found: [" & pStack & "]")
+   end if
+   try
+      library pStack
+   catch tError
+      _jsonErr ("Error using stack: [" & pStack & "]. Check if this stack is compatible with version" && the version && "of LiveCode.")
+   end try
+end _useStack
+
+
+private function q pString
+   return quote & pString & quote
+end q
+
+
+private function version.major
+   set the itemDel to "."
+   return (item 1 of the version)
+end version.major
+
+
+private command _outputJson pJson
+   put header "Content-Type: application/json; charset=UTF-8"
+   if (version.major() >= 7) then
+      put header "Content-Length:" && len(textEncode(pJson, "utf-8"))
+      set the outputTextEncoding to "utf-8"
+   else
+      put header "Content-Length:" && len(pJson)
+   end if
+   put pJson
+   quit
+end _outputJson
+
+
+private command _jsonErr pError
+   put "{" & q("api") & ":{" & q("status_msg") & ":" & q(pError) & "," & q("status_code") & ":100}}" into tJson
+   _outputJson tJson
+end _jsonErr
+
+
+?>

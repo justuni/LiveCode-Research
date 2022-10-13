@@ -1,0 +1,268 @@
+local theSocket, requestArray, theServerIsRunning
+
+local theRouter, theRequest, theResponse, theMiddleWare, theHandler
+
+local theMiddleWarehandlers
+local middleWareIndex
+
+setProp serverIsRunning theValue
+   put theValue into theServerIsRunning
+end serverIsRunning
+getProp serverIsRunning
+   return theServerIsRunning
+end serverIsRunning
+
+setProp routerObject theValue
+   put theValue into theRouter
+end routerObject
+getProp routerObject
+   return theRouter
+end routerObject
+
+setProp middleWareObject objectRef
+   
+   --lets attach the behavior to the object
+   put the long id of the btn "MiddleWareBehavior" into theMiddleWareBehavior
+   set the behavior of objectRef to theMiddleWareBehavior
+   
+   --attach the server to the behavior, so it can call back.
+   set the serverObject of objectRef to the long id of me
+   
+   --then register the MiddleWare with this server
+   put objectRef into theMiddleWare
+   
+end middleWareObject
+getProp middleWareObject
+   return theMiddleWare
+end middleWareObject
+
+On StartServer
+   put the Long ID of btn "Response" into theResponse
+   put the Long ID of btn "Request" into theRequest
+   
+   if the serverIsRunning of me is not true or the serverIsRunning of me is Empty then
+      accept connections on port (the portToListenTo of me) with message "newConnection"
+      if the result is not empty then answer info the result
+      set the serverIsRunning of me to true
+      --send "serverStatusChanged" to me
+   else
+      set the serverIsRunning of me to false
+   end if
+   
+end StartServer
+
+
+
+
+
+on newConnection pSocket
+   put pSocket into theSocket
+   dispatch "setDefaults" to theRequest
+   dispatch "resetToDefaults" to theResponse
+   read from socket theSocket until crlf&crlf with message "handleRequest"
+   
+   
+end newConnection
+
+
+on handleRequest theIPAddress, theData
+   
+   split theIPAddress by ":"
+   set the IPAddress of theRequest to theIPAddress[1]
+   set the port of theRequest to theIPAddress[2]
+   set the method of theRequest to word 1 of theData
+   
+   put word 2 of theData into theReqInfo
+   split theReqInfo by "?"
+   put theReqInfo[1]into theRoute
+   put theReqInfo[2] into theQuery
+   put empty into theReqInfo
+   
+   split theQuery by "?" and "="
+   set the query of theRequest to theQuery
+   set the path of theRequest to theRoute
+   
+   split theRoute by "/"
+   combine theRoute with "."
+   put the method of theRequest & theRoute into theHandler
+   
+   put parseHeaders(theData) into theHeaders
+   set the headers of theRequest to theHeaders
+   
+   // if it is a POST or PUT we need to parse the body
+   if the method of theRequest = "POST" or the method of theRequest = "PUT" then
+      put theHeaders["Content-Type"] into theContentType
+      split theContentType with ";"
+      put theContentType[1] into theContentTypePart1
+      put theContentType[2] into theContentTypePart2
+      split theContentTypePart2 with "="
+      
+      if theContentTypePart1 = "multipart/form-data" then
+         put theContentTypePart2[2] & "--" into theBoundary
+         read from socket theSocket until theBoundary
+         put it into theBody
+         put theBody into theRawBody
+      else if theContentTypePart1 = "application/x-www-form-urlencoded" then
+         read from socket theSocket for theHeaders["Content-Length"]
+         put it into theBody
+         put theBody into theRawBody
+         split theBody by "?" and "="
+      else
+         read from socket theSockets for theHeaders["Content-Length"]
+         put it into theBody
+         put theBody into theRawBody
+      end if
+      set the body of theRequest to theBody
+      set the rawBody of theRequest to theRawBody
+   end if
+   
+   
+   invokeMiddleWareStack
+   sendResponse
+   
+end handleRequest
+
+
+
+on readFromSocket theIPAddress, theData
+   
+   split theIPAddress by ":"
+   set the IPAddress of theRequest to theIPAddress[1]
+   set the port of theRequest to theIPAddress[2]
+   set the method of theRequest to word 1 of theData
+
+   
+   put word 2 of theData into theReqInfo
+   split theReqInfo by "?"
+   put theReqInfo[1]into theRoute
+   put theReqInfo[2] into theQuery
+   put empty into theReqInfo
+   
+   split theQuery by "?" and "="
+   set the query of theRequest to theQuery
+   set the path of theRequest to theRoute
+   
+   split theRoute by "/"
+   combine theRoute with "."
+   put the method of theRequest & theRoute into theHandler
+   
+   invokeMiddleWareStack
+   
+   sendResponse
+   
+end readFromSocket
+
+
+on sendResponse
+   get the responseString of btn "response"
+   write it to socket theSocket with message "closeConnection"
+   exit to top  //  once we send we are done.  this should kill the current script stack
+end sendResponse
+
+
+
+on closeConnection
+    close socket theSocket
+end closeConnection
+
+
+on stopServer
+   get the openSockets
+   repeat with i=1 to the num of lines in it
+      close socket (line i of it)
+   end repeat
+   set the serverIsRunning of me to false
+end stopServer
+
+on setDefaults
+   set portToListenTo of me to 1337
+end setDefaults
+
+
+
+
+on invokeMiddlewareStack
+   put handlerNames(the script of theMiddleWare , "messages" ) into theMiddleWarehandlers
+   put 0 into middleWareIndex
+   nextMiddleWare
+end invokeMiddlewareStack
+
+on nextMiddleWare theError
+   
+   put the sendNow of theResponse into sendNow
+   
+   
+   add 1 to middleWareIndex
+   get line middleWareIndex of theMiddleWarehandlers
+   put it into theMessage
+   if it is not empty and it <> "goNext" and not sendNow then
+      dispatch theMessage to theMiddleWare with theRequest, theResponse
+   else
+      dispatch theHandler to theRouter with theRequest, theResponse
+      if it is not "handled" then
+         set the httpStatus of theResponse to 404
+      end if
+   end if
+end nextMiddleWare
+
+
+
+function handlerNames pScript,pHandlerType
+    switch pHandlerType
+        case "message" 
+            ## list the message handlers
+            filter pScript with "on*"
+            break
+        case "function" 
+            ## list the function handlers
+            filter pScript with "function*"
+            break
+        case "setProp" 
+            ## list the setProp handlers
+            filter pScript with "setProp*"
+            break
+        case "getProp" 
+            ## list the getProp handlers
+            filter pScript with "getProp*"
+            break
+        default 
+            ## list all the handlers, if no type specified
+            filter pScript with "end*"
+    end switch
+
+    repeat with x = 1 to the number of lines of pScript
+        ## word 2 of the first or last line of a handler is the handler name:
+        put word 2 of line x of pScript into line x of pScript
+    end repeat
+
+    if pScript is empty then 
+        return "(None found)"
+    else
+        return pScript
+    end if
+end handlerNames
+
+
+function parseHeaders theData
+   
+   put number of lines of theData into totalLines
+   put line 2 to totalLines of theData into theHeaders
+   split theHeaders by crlf and ":"
+   repeat for each key theHeader in theHeaders
+      if theHeaders[theHeader] is not empty then
+         put trim(theHeaders[theHeader]) into newHeaders[theHeader]
+      end if
+   end repeat
+   put newHeaders into theHeaders
+   put empty into newHeaders
+   
+   
+
+   return theHeaders
+end parseHeaders
+
+
+function trim theText
+   Put word 1 to -1 of theText into theText
+   return theText
+end trim

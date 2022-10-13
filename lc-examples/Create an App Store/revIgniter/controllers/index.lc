@@ -1,0 +1,101 @@
+<?lc
+
+# PUT YOUR METHOD NAMES  INTO THE GLOBAL gControllerHandlers AS A COMMA SEPARATED LIST
+put "homeAppStoreHTML, homeHTML, getHomeData" into gControllerHandlers
+
+
+
+#insert data into home html file
+command homeHTML
+	
+    rigLoadModel "sliderModel"
+    
+
+    # load slider images and data    
+    put getSliderData() into tSliderArray
+   
+
+    # all data MUST be put in gData Array 
+    put tSliderArray into gData["slider"]
+
+
+    get rigLoadView("index") 
+
+    
+end homeHTML
+
+command homeAppStoreHTML
+	
+    --Get the Data from the buildAppHomeArray
+    --and simply add it to the global array gData
+    put buildAppHomeArray() into gData
+
+    get rigLoadView("home") 
+
+end homeAppStoreHTML
+
+
+-- buildAppHomeArray
+-- DESCRIPTION:
+--    Builds the Home Page Array by calling the models
+--    and constructing it to match the View
+-- RETURN:
+--   tHomePageA: Array structure
+-- CHANGES:
+--    08/27/2015 Todd: Created 
+function buildAppHomeArray
+# load models
+
+    #load the models
+    rigLoadModel "sliderModel"
+    rigLoadModel "productModel"
+    rigLoadModel "categoryModel"
+
+    --------------------------------------------
+    --Slider
+    # load slider images and data    
+    put getSliderData("home") into tSliderArray
+    put tSliderArray into tHomePageA["slider"]
+    
+    --------------------------------------------
+    --Products
+    # load Featured Products 
+    put getAppsByGroup("featured") into tFeaturedA
+    put tFeaturedA into tHomePageA["products"]["featured"]
+    
+    # load Best Game Products 
+    put getAppsByGroup("games") into tGamesA
+    put tGamesA into tHomePageA["products"]["games"]
+    
+    --------------------------------------------
+    --Category
+    put getAppCategories() into tCategoriesArray
+    put tCategoriesArray into tHomePageA["categories"]
+    
+    return tHomePageA
+end buildAppHomeArray
+
+
+#insert data into home html file
+command getHomeData
+    include "easyjson.lc"
+
+    --Get the Data from the buildAppHomeArray
+    --and simply add it to the global array gData
+    put buildAppHomeArray() into tHomeDataArray
+
+    #convert data entries array to json
+    put jsonFromArray (tHomeDataArray) into tJSON	
+    
+    --Return JSON to the caller
+    put tJSON
+    
+end getHomeData
+
+
+
+
+
+--| END OF index.lc
+--| Location:./system/application/controllers/index.lc
+----------------------------------------------------------------------

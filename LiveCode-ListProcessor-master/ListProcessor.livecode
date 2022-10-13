@@ -1,0 +1,341 @@
+﻿script "ListProcessor"
+
+##  Simple list processing functions
+##
+##  Author: Peter W A Wood
+##
+##  © Copyright 2015, 2016 Peter W A Wood
+##
+##  This software can be freely used under the terms of the GNU General Public License
+##  version 3. If you do not have a copy of that license, there is a copy at:
+##    https://github.com/PeterWAWood/LiveCode-ListProcessor/blob/master/LICENSE
+
+#### Handlers
+on closeStack
+end closeStack
+
+on libraryStack
+end libraryStack
+
+#### local functions
+
+private function isInBounds @pList, idx
+  if idx < first item of extents(pList["items"]) then return false
+  if idx > second item of extents(pList["items"]) then return false
+  return true
+end isInBounds
+
+private function isList @pList
+  if pList is empty then return false
+  if pList is not an array then return false
+  if pList["index"] is not a number then return false
+  if pList["index"] = 0 and pList["items"] is empty then return true
+  if plist["items"] is not an array then return false
+  return true
+end isList
+
+private function indexSize @pList
+  return second item of extents(pList["items"])
+end indexSize
+
+#### published commands and functions
+
+### LP.ahead - returns the next item in the list or empty if the list is at its tail
+##    pList         The list
+##    returns       The next item in the list or empty
+function LP.ahead @pList
+  if LP.isEmpty(pList) then return empty
+  if LP.isAtTail(pList) then return empty
+  return pList["items"][pList["index"] + 1]
+end LP.ahead
+
+### LP.append - appends an item to the end of the list and returns the appended item
+##    pList         The list
+##    pVal          The value
+##    returns       The first item in the list or empty
+function LP.append @pList, pVal
+  local tNewItemIndex
+  if not isList(pList) then return empty
+  put indexSize(pList) + 1 into tNewItemIndex
+  put pVal into pList["items"][tNewItemIndex]
+  if pList["index"] = 0 then put 1 into pList["index"]
+  return pList["items"][tNewItemIndex]
+end LP.append
+
+### LP.behind - returns the previous item in the list or empty if the list is at its head
+##    pList         The list
+##    returns       The previous item in the list or empty
+function LP.behind @pList
+  if LP.isEmpty(pList) then return empty
+  if LP.isAtHead(pList) then return empty
+  return pList["items"][pList["index"] - 1]
+end LP.behind
+
+### LP.clear - empties a list and returns the empty list or empty
+##    pList         The list
+##    returns       The emptied list 
+function LP.clear @pList
+  if LP.isEmpty(pList) then return empty
+  put empty into pList["items"]
+  put 0 into pList["index"]
+  return pList
+end LP.clear
+
+## LP.copy - returns a copy of a list
+##    pList         The list
+##    returns       A copy of the list
+function LP.copy @pList
+  local tCopy
+  local tCounter
+  local tFrom
+  local tTo
+  if not isList(pList) then return empty
+  put LP.makeList(empty, empty) into tCopy
+  put pList["index"] into tCopy["index"]
+  put plist["items"] into tCopy["items"]
+  return tCopy
+end LP.copy
+
+## LP.copyToTail - returns a copy of a list from the current index
+##    pList         The list
+##    returns       A copy of the list
+function LP.copyToTail @pList
+  local tCopy
+  local tCounter
+
+  if not isList(pList) then return empty
+  put LP.makeList(empty, empty) into tCopy
+  if LP.isEmpty(pList) then return tCopy
+  repeat with tCounter = LP.index(pList) to indexSize(pList)
+    assert LP.append(tCopy, pList["items"][tCounter])
+  end repeat
+  put 1 into tCopy["index"]
+  return tCopy
+end LP.copyToTail
+
+### LP.detachLast - removes the last item in the list and returns that item or empty
+##    pList         The list
+##    returns       The removed item or empty
+function LP.detachLast @pList
+  local tLastItem
+  if LP.isEmpty(pList) then return empty
+  put LP.last(pList) into tLastItem
+  delete variable pList["items"][indexSize(pList)]
+  return tLastItem
+end LP.detachLast
+
+### LP.first - returns the item at the current index or empty
+##    pList         The list
+##    returns       The item at the current index or empty
+function LP.first @pList
+  if LP.isEmpty(pList) then return empty
+  return pList["items"][pList["index"]]
+end LP.first
+
+### LP.head - sets the index to the first item and returns the first item
+##    pList         The list
+##    returns       The first item in the list or empty
+function LP.head @pList
+  if not isList(pList) then return empty
+  if pList["index"] = 0 then return empty
+  put 1 into pList["index"]
+  return pList["items"][pList["index"]]
+end LP.head
+
+### LP.index - returns the value of the current index
+##    pList         The list
+##    returns       The value of the current index
+function LP.index @pList
+  return plist["index"]
+end LP.index
+
+### LP.insert - inserts an item at the current index and returns the inserted item
+##    pList         The list
+##    pVal          The value
+##    returns       The inserted item in the list or empty
+function LP.insert @pList, pVal
+  local tIndex
+  if not isList(pList) then return empty
+  repeat with tIndex = LP.index(pList) to indexSize(pList)
+    put pList["items"][tIndex] into plist["items"][tIndex + 1]
+  end repeat 
+  if pList["index"] = 0 then put 1 into pList["index"]
+  put pval into pList["items"][pList["index"]]
+  return pList["items"][pList["index"]]
+end LP.insert
+
+### LP.isAtHead - returns true if the index is set to the first item in the list
+##    pList         The list
+##    returns       True or false
+function LP.isAtHead @pList
+  if not isList(pList) then return false
+  if pList["index"] = 0 then return false
+  if pList["index"] = 1 then return true
+  return false
+end LP.isAtHead
+
+### LP.isAtTail - returns true if the index is set to the last item in the list
+##    pList         The list
+##    returns       True or false
+function LP.isAtTail @pList
+  if not isList(pList) then return false
+  if pList["index"] = 0 then return false
+  if LP.length(pList) = 1 then return true
+  return false
+end LP.isAtTail
+
+### LP.isEmpty - returns true if the list is empty
+##    pList         The list
+##    returns       True or false
+function LP.isEmpty @pList
+  if not isList(pList) then return true
+  if pList["index"] = 0 then return true
+  return false
+end LP.isEmpty
+
+### LP.last - returns the item at the tail of the list or empty
+##    pList         The list
+##    returns       The item at the tail of the list or empty
+function LP.last @pList
+  if LP.isEmpty(pList) then return empty
+  return pList["items"][indexSize(pList)]
+end LP.last
+
+## LP.length - returns the number of items in the list based on the current index
+##    pList         The list
+##    returns       The number of items in the list from the current index
+function LP.length @pList
+  local tLen
+  if not isList(pList) then return 0
+  if pList["index"] = 0 then return 0
+  return indexSize(pList) - plist["index"] + 1
+end LP.length
+
+### LP.load - Loads a saved list from a URL and returns the restored list
+##    pURL          The URL
+##    returns       The List
+function LP.load pURL
+  local tEncodedList
+  local tError
+  local tList
+  try
+    put URL pURL into tEncodedList
+    put arrayDecode(tEncodedList) into tList
+  catch tError
+    return empty
+  end try
+  return tList
+end LP.load
+
+## LP.makeList - creates a list
+##    pStringList     The items to put in the list
+##    pDelimiter      The separator used in the string between items in the list
+##    returns         A list or empty
+function LP.makeList pStringList, pDelimiter
+  local tList
+  if pStringList is empty then
+    put empty into tList["items"]
+    put 0 into tList["index"]
+  else if pDelimiter is not empty then
+    put pStringList into tList["items"]
+    split tList["items"] by pDelimiter
+    put 1 into tList["index"]
+  else
+    put pStringList into tList["items"][1]
+    put 1 into tList["index"]
+  end if
+  return tList
+end LP.makeList
+
+### LP.next - moves to the next item in the list and returns that item or empty
+##    pList         The list
+##    returns       The now first item or empty
+function LP.next @pList
+  if not isList(pList) then return empty
+  if plist["index"] < LP.length(pList) then
+    add 1 to plist["index"]
+    return pList["items"][plist["index"]]
+  end if
+  return empty
+end LP.next
+
+###LP.peek - returns the nth item based on the current index
+##    pList         The list
+##    pPos          The position of the element requested
+##    returns       The item or empty
+function LP.peek @pList, pPos
+  local atPos
+  if not isList(pList) then return empty
+  put pList["index"] + pPos - 1 into atPos
+  if not isInBounds(pList, atPos) then return empty
+  return pList["items"][atPos]
+end LP.peek
+
+### LP.poke - puts the supplied value into the nth position based on the current index
+##    pList         The list
+##    pPos          The position of the element requested
+##    pVel          The value to be poked into the list
+##    returns       The item poked into the list or empty
+function LP.poke @pList, pPos, pVal
+  local atPos
+  if not isList(pList) then return empty
+  put pList["index"] + pPos - 1 into atPos
+  if not isInBounds(pList, atPos) then return empty
+  put pVal into pList["items"][atPos]
+  return pList["items"][atPos]
+end LP.poke
+
+### LP.prior - moves to the prior item in the list and returns that item or empty
+##    pList         The list
+##    returns       The now first item or empty
+function LP.prior @pList
+  if not isList(pList) then return empty
+  if plist["index"] > 1 then
+    subtract 1 from plist["index"]
+    return pList["items"][plist["index"]]
+  end if
+  return empty
+end LP.prior
+
+### LP.remove - removes the item at the current index and returns the removed item 
+##    pList         The list
+##    returns       The removed item or empty
+function LP.remove @pList
+  local tItem
+  local tIndex
+  local tLast
+  local tNextIndex
+  local tTo
+  if LP.isEmpty(pList) then return empty
+  put LP.first(pList) into tItem
+  put indexSize(pList) into tLast
+  put indexSize(pList) - 1 into tTo
+  repeat with tIndex = pList["index"] to tTo
+    put tIndex + 1 into tNextIndex
+    put pList["items"][tNextIndex] into pList["items"][tIndex]
+  end repeat
+  delete variable pList["items"][tLast]
+  return tItem
+end LP.remove
+
+### LP.save - saves the list and returns an arrayEncoded copy of the list
+##    pList         The list
+##    pURL          The URL
+##    returns       An arrayEncoded copy of the list
+function LP.save @pList pURL
+  local tEncodedList
+  if not isList(pList) then return empty
+  put arrayEncode(pList) into tEncodedList
+  put tEncodedList into URL pURL
+  return tEncodedList
+end LP.save
+
+## LP.tail - sets the index to the last item and returns the last item
+##    pList         The list
+##    returns       The last item in the list or empty
+function LP.tail @pList
+  if not isList(pList) then return empty
+  if pList["index"] = 0 then return empty
+  put indexSize(pList) into pList["index"]
+  return pList["items"][pList["index"]]
+end LP.tail

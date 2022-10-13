@@ -1,0 +1,44 @@
+name: Bell Conductor
+version: 0.0.1
+build: 1
+encrypt stacks: false
+multiple instances: false
+relaunch in background: false
+application data folder:
+  user:
+    default:
+    macos:
+    windows:
+    linux:
+    ios:
+    android:
+creator code:
+shutdown when all windows are closed: false
+preferences filename:
+  user:
+    default: com.trevordevore.bellconductor
+    windows: Bell Conductor.prefs
+ui:
+  - folder: ./ui
+libraries:
+  - folder: ./libraries
+frontscripts:
+  - folder: ./frontscripts
+backscripts:
+  - folder: ./backscripts
+behaviors:
+  - folder: ./behaviors
+helpers:
+  - filename: "[[FRAMEWORK]]/helpers/preferences"
+build folder: ../builds
+build profiles:
+  all profiles:
+    post build script:
+    certificates:
+      macos:
+        name:
+    copy files:
+      all platforms:
+        - filename: prefs.yml
+  release:
+  beta:

@@ -1,0 +1,33 @@
+script "nativeDatePicker"
+
+----------------------------------
+-- Function returns value formatted in mm/dd/yyyy 
+-- PARAMETERS
+-- pCurrent: the start value for date picker in seconds
+----------------------------------
+function getPickDate pCurrent
+   
+   mobilePickDate "date", pCurrent,,,"cancel"
+   put the result into tDateSeconds
+   
+   // check and return the result
+   if tDateResult is 0 then
+      if pCurrent is empty then 
+         put the date into pCurrent
+      else
+         convert pCurrent to date
+      end if
+      
+      return pCurrent
+   else
+      convert tDateSeconds to dateitems
+      
+      put the item 1 of tDateSeconds into tYear
+      put the item 2 of tDateSeconds into tMonth
+      put the item 3 of tDateSeconds into tDay
+      
+      put tMonth & slash & tDay & slash & tYear into tDate
+   end if
+   
+   return tDate
+end getPickDate

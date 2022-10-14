@@ -1,0 +1,5 @@
+*.livecode
+*.bundle
+userstate.json
+*.zip
+build

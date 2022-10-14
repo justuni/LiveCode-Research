@@ -1,0 +1,178 @@
+{
+  "UUID": "F00A4B25-C2B3-45FB-A080-93BB18F9665F",
+  "class": "com.runrev.engine.stack",
+  "customPropertySets": {
+    "cREVLoadInfo": {
+      "inMenu": "true",
+      "load": "startup"
+    },
+    "cRevInstallGadgetSettings": {
+      "RunIG": "no"
+    },
+    "cRevStandaloneSettings": {
+      "Linux": "false",
+      "MacOSX": "true",
+      "MacOSX PowerPC-32": "false",
+      "MacOSX x86-32": "false",
+      "OSX,copyright": "2013  All rights reserved worldwide",
+      "OSX,documentExtension": "",
+      "OSX,documentType": "",
+      "OSX,identifier": "com..lcvcs",
+      "OSX,info": "lcVCS Version 1.0.0.0",
+      "OSX,longVersion": "lcVCS 1.0.0.0",
+      "OSX,name": "lcVCS",
+      "OSX,shortVersion": "1.0.0.0",
+      "OSX,signature": "????",
+      "Solaris Intel": "false",
+      "Solaris SPARC": "false",
+      "UNIX,colorChooser": "false",
+      "UNIX,fileSelector": "false",
+      "UNIX,pageSetup": "false",
+      "UNIX,printerChooser": "false",
+      "Windows": "false",
+      "Windows,FileDescription": "lcVCS 1.0.0.0 for Windows",
+      "Windows,LegalCopyright": "2013  All rights reserved worldwide",
+      "Windows,ProductName": "lcVCS",
+      "Windows,UUID": "E4289A38-3E40-4AB9-B78B-1D2793C13E90",
+      "Windows,companyname": "",
+      "Windows,documenticonFile": "",
+      "Windows,fileversion1": "1",
+      "Windows,fileversion2": "0",
+      "Windows,fileversion3": "0",
+      "Windows,fileversion4": "0",
+      "Windows,iconFile": "",
+      "Windows,productversion1": "1",
+      "Windows,productversion2": "0",
+      "Windows,productversion3": "0",
+      "Windows,productversion4": "0",
+      "Windows,uacExecutionLevel": "asInvoker",
+      "android": "false",
+      "answerDialog": "false",
+      "askDialog": "false",
+      "cursors": "false",
+      "inclusions": "select",
+      "ios": "false",
+      "name": "lcvcs",
+      "scriptLibraries": ""
+    },
+    "customKeys": {
+      "kColorProps": "",
+      "kMissingProps": ""
+    },
+    "uDataGridBehaviors": {
+      "1005": {
+        "ID": "1005",
+        "UUID": "4B5CF4EB-992B-4EDA-809F-6A2872946D3F"
+      },
+      "1006": {
+        "ID": "1006",
+        "UUID": "7994108E-138B-4699-AA15-4614416F972A"
+      },
+      "1007": {
+        "ID": "1007",
+        "UUID": "0EEB4BAB-6772-4DD6-9C68-DB9151C3783A"
+      },
+      "1066": {
+        "ID": "1066",
+        "UUID": "59D5596E-742D-4B2B-8137-E54231ED9CBC"
+      },
+      "1089": {
+        "ID": "1089",
+        "UUID": "0AED05F4-AB4A-45D3-B3F9-4123FDB8B9A7"
+      },
+      "1126": {
+        "ID": "1126",
+        "UUID": "91607A23-941F-4AE2-88FE-049F08CC2F25"
+      },
+      "1127": {
+        "ID": "1127",
+        "UUID": "12E71764-D8C8-456B-8524-3E35AC296C36"
+      },
+      "1128": {
+        "ID": "1128",
+        "UUID": "984B7FD9-631C-49BC-B77D-FAE29178CB10"
+      },
+      "1145": {
+        "ID": "1145",
+        "UUID": "92537B69-3E4C-4C56-B1D9-BBCB6BAE0721"
+      },
+      "1146": {
+        "ID": "1146",
+        "UUID": "5EA0680E-B19A-4B85-9573-DAF0833CE916"
+      },
+      "1160": {
+        "ID": "1160",
+        "UUID": "6EB5FE48-CDD5-4B77-A4EC-DDE2BAF20B69"
+      },
+      "1173": {
+        "ID": "1173",
+        "UUID": "423A8BDF-8825-4B40-B185-B3B2D6DB4C76"
+      }
+    }
+  },
+  "properties": {
+    "altId": "0",
+    "alwaysBuffer": "false",
+    "backColor": "",
+    "backPattern": "",
+    "behavior": "ac149469-a6f4-484c-9bee-34b18642a3ac",
+    "blendLevel": "0",
+    "borderColor": "",
+    "borderPattern": "",
+    "bottomColor": "",
+    "bottomPattern": "",
+    "cantAbort": "false",
+    "cantDelete": "false",
+    "cantModify": "false",
+    "decorations": "title,menu,minimize,maximize,close",
+    "destroyStack": "false",
+    "destroyWindow": "false",
+    "dynamicPaths": "false",
+    "editMenus": "false",
+    "externals": "",
+    "focusColor": "",
+    "focusPattern": "",
+    "foreColor": "",
+    "forePattern": "",
+    "formatForPrinting": "false",
+    "fullscreen": "false",
+    "fullscreenmode": "",
+    "hcAddressing": "false",
+    "height": "221",
+    "hiliteColor": "",
+    "hilitePattern": "",
+    "icon": "0",
+    "iconic": "false",
+    "linkColor": "",
+    "linkHiliteColor": "",
+    "linkVisitedColor": "",
+    "liveResizing": "false",
+    "maxHeight": "65535",
+    "maxWidth": "65535",
+    "menubar": "",
+    "metal": "false",
+    "minHeight": "32",
+    "minWidth": "32",
+    "name": "lcVCS",
+    "resizable": "true",
+    "shadow": "true",
+    "shadowColor": "",
+    "shadowOffset": "4",
+    "shadowPattern": "",
+    "stackFiles": "",
+    "startUpIconic": "false",
+    "style": "toplevel",
+    "systemWindow": "false",
+    "textFont": "",
+    "textSize": "",
+    "textStyle": "",
+    "title": "",
+    "topColor": "",
+    "topPattern": "",
+    "underlineLinks": "",
+    "visible": "true",
+    "width": "251",
+    "windowManagerPlace": "false",
+    "windowShape": "0"
+  }
+}

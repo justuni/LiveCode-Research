@@ -1,0 +1,161 @@
+/**
+ *  This file is part of lcVCS (C) 2013 M E R Goulding.
+ *  
+ *  lcVCS is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  lcVCS is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with lcVCS.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+local sProjects,sFetched
+
+on preOpenStack
+   set the title of me to "lcVCS Projects"&&the uVersion["REF"] of stack "lcVCS"
+   ResetProjects
+end preOpenStack
+
+on resumeStack
+  ResetProjects
+end resumeStack
+
+on ResetProjects pIndex
+   if pIndex is not a number then
+      put the dgHilitedIndex of group "projects" into pIndex
+   end if
+   put GetPreference("Projects") into sProjects
+   
+   local tData
+   repeat for each key tIndex in sProjects
+      if there is not a file sProjects[tIndex] then
+         delete variable sProjects[tIndex]
+      else
+         try
+            put JSONToArray(url ("binfile:"&sProjects[tIndex])) into tData[tIndex]
+         end try
+      end if
+   end repeat
+   set the dgData of group "projects" to tData
+   
+   set the dgHilitedIndex of group "projects" to pIndex
+   if the dgHilitedIndex of group "projects" is empty AND tIndex > 0 then
+      put 1 into pIndex
+      set the dgHilitedIndex of group "projects" to pIndex
+   end if
+   
+   dispatch "selectionChanged" to group "projects" with pIndex
+end ResetProjects
+
+on AddProject pPath
+   repeat for each key tIndex in sProjects
+      if sProjects[tIndex] is pPath then
+         exit AddProject
+      end if
+   end repeat
+   
+   local tData
+   try
+      put JSONToArray(url ("binfile:"&pPath)) into tData
+   end try
+   if tData is not an array then
+      -- default values
+      set the itemDelimiter to slash
+      put item -2 of pPath into tData["name"]
+   end if
+   
+   local tOldIndex
+   put the dgHilitedIndex of group "projects" into tOldIndex
+   dispatch "AddData" to group "projects" with tData
+   put the result into tIndex
+   set the dgHilitedIndex of group "projects" to tIndex
+   dispatch "ScrollIndexIntoView" to group "projects" with tIndex
+   dispatch "selectionChanged" to group "projects" with tIndex,tOldIndex
+   put pPath into sProjects[tIndex]
+   SaveProject tIndex
+   SetPreference "Projects",sProjects
+end AddProject
+
+on DeleteProject pIndex
+   delete variable sProjects[pIndex]
+   dispatch "DeleteIndex" to group "projects" with pIndex
+   if sProjects is an array then
+      if the number of elements of sProjects > 0 then
+         set the dgHilitedLine of group "projects" to 1
+         dispatch "ScrollIndexIntoView" to group "projects" with 1
+         dispatch "selectionChanged" to group "projects" with 1
+      end if
+   else
+      ClearAndDisable
+   end if
+   SetPreference "Projects",sProjects
+end DeleteProject
+
+on SaveProject pIndex
+   if pIndex is not empty then
+      local tDataA
+      put the dgDataOfIndex[pIndex] of group "projects" into tDataA
+      put fld "build path" into tDataA["build path"]
+      put fld "resource paths" into tDataA["resource paths"]
+      local tStacksA
+      put the dgData of group "stackFiles" into tStacksA
+      local i
+      repeat for each item tIndex in the dgIndexes of group "stackFiles"
+         add 1 to i
+         put tStacksA[tIndex]["file"] into tDataA["stackFiles"][i]
+      end repeat
+      local tPluginsA
+      put the dgData of group "Plugins" into tPluginsA
+      delete variable tDataA["plugins"]
+      
+      put 1 into i
+      repeat with tIndex = 1 to the number of elements of tPluginsA
+         # only add the plugin if we want to use it
+         if tPluginsA[tIndex]["checked"] then
+            put tPluginsA[tIndex]["stack"] into tDataA["plugins"][i]
+            add 1 to i
+         end if
+      end repeat
+      put ArrayToJSON(tDataA,,true) into url ("binfile:"&sProjects[pIndex])
+      set the dgDataOfIndex[pIndex] of group "projects" to tDataA
+   end if
+end SaveProject
+   
+on ClearAndDisable
+   put empty into fld "project path"
+   put empty into fld "build path"
+   set the dgData of group "stackFiles" to empty 
+end ClearAndDisable
+
+function PathForProject pIndex
+   set the itemDel to slash
+   return item 1 to -2 of sProjects[pIndex]
+end PathForProject
+
+on ExportProjectAtIndex pIndex
+   ExportProject sProjects[pIndex]
+end ExportProjectAtIndex
+
+on ImportProjectAtIndex pIndex
+   ImportProject sProjects[pIndex]
+end ImportProjectAtIndex
+
+on lcVCSExport
+   if the target is me then
+      set the title of me to empty
+      set the text of fld "project path" to empty
+      set the text of fld "build path" to empty
+      set the text of fld "resource paths" to empty
+      set the width of me to 500
+      set the height of me to 400
+      set the dgData of group "Projects" to empty
+      set the dgData of group "Stackfiles" to empty
+      set the dgData of group "Plugins" to empty
+   end if
+end lcVCSExport

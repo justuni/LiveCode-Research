@@ -1,0 +1,33 @@
+/**
+ *  This file is part of lcVCS (C) 2013 M E R Goulding.
+ *  
+ *  lcVCS is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *  
+ *  lcVCS is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU General Public License
+ *  along with lcVCS.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+on lcVCSFilterExportedProps pObject,@pProps
+   -- translate row template to UUID for export
+   if exists(pProps["row template"]) then
+      -- UUIDForObject available because lcVCS is in use
+      put UUIDForObject(pProps["row template"]) into pProps["row template"]
+   end if
+end lcVCSFilterExportedProps
+
+on lcVCSRegisterUUIDsToResolve pObject,@pUUIDsToResolve
+   put the dgProps["row template"] of pObject into pUUIDsToResolve
+end lcVCSRegisterUUIDsToResolve
+
+-- translate the row template from a UUID to a rugged ID
+on lcVCSResolveUUIDs pObject
+   set the dgProps["row template"] of pObject to word 1 to -4 of ObjectForUUID(the dgProps["row template"] of pObject)
+end lcVCSResolveUUIDs

@@ -1,0 +1,882 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word 9">
+<meta name="Originator" content="Microsoft Word 9">
+<link rel="File-List" href="http://f6.grp.yahoofs.com/v1/IHtgQDNtyJyl_T80_KZitK96DRMA2wM4KqNhPS7dK7OKvhOEBw8GRJ_Hpgtag4hOiSqYML_bsD5j6MgULrDNu87bxaUQig/STAMP/STAMP_Draft_3_bestanden/filelist.xml"><title>Introduction to STAMP</title><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Subject>Simple Transfer, Authentication and Messaging Protocol</o:Subject>
+  <o:Author>Jan Schenkel</o:Author>
+  <o:Description>Draft 1</o:Description>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Jan Schenkel</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>55</o:TotalTime>
+  <o:Created>2002-12-01T20:04:00Z</o:Created>
+  <o:LastSaved>2002-12-01T20:04:00Z</o:LastSaved>
+  <o:Pages>5</o:Pages>
+  <o:Words>1138</o:Words>
+  <o:Characters>6491</o:Characters>
+  <o:Lines>54</o:Lines>
+  <o:Paragraphs>12</o:Paragraphs>
+  <o:CharactersWithSpaces>7971</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotShowRevisions/>
+  <w:DoNotPrintRevisions/>
+  <w:HyphenationZone>21</w:HyphenationZone>
+ </w:WordDocument>
+</xml><![endif]-->
+
+
+<style>
+<!--
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 70.85pt 70.85pt 70.85pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:14237147;
+	mso-list-template-ids:1844059524;}
+@list l1
+	{mso-list-id:68159974;
+	mso-list-template-ids:-423168380;}
+@list l2
+	{mso-list-id:68623131;
+	mso-list-template-ids:1213468170;}
+@list l3
+	{mso-list-id:578638714;
+	mso-list-template-ids:1371339036;}
+@list l4
+	{mso-list-id:1507865299;
+	mso-list-template-ids:-5200588;}
+@list l5
+	{mso-list-id:1575118794;
+	mso-list-template-ids:566159228;}
+@list l6
+	{mso-list-id:1713770813;
+	mso-list-template-ids:561002568;}
+@list l7
+	{mso-list-id:1730767655;
+	mso-list-template-ids:664438394;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+
+<meta name="Title" content="Introduction to STAMP">
+<meta name="Keywords" content=""></head>
+
+<body bgcolor="white" lang="NL" style="">
+
+<div class="Section1">
+
+<table border="1" cellspacing="0" cellpadding="0" style="border: medium none ; border-collapse: collapse;">
+ <tbody><tr>
+  <td width="575" colspan="3" valign="top" style="border: 0.5pt solid windowtext; padding: 0cm 3.5pt; width: 431pt;">
+  <p class="MsoNormal" align="center" style="text-align: center;"><b><span lang="EN-GB" style="">STAMP</span></b><span lang="EN-GB" style=""> – Simple Transfer, Authentication
+  and Messaging Protocol<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 7.15pt;">
+  <td width="288" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 216.15pt; height: 7.15pt;">
+  <p class="MsoHeader" style=""><span lang="EN-GB" style="">Contributing authors:<o:p></o:p></span></p>
+  </td>
+  <td width="286" colspan="2" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 214.85pt; height: 7.15pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Jan Schenkel<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 7.1pt;">
+  <td width="288" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 216.15pt; height: 7.1pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Version:<o:p></o:p></span></p>
+  </td>
+  <td width="143" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 107.4pt; height: 7.1pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Draft 3<o:p></o:p></span></p>
+  </td>
+  <td width="143" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 107.45pt; height: 7.1pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Dec 1<sup>st</sup> 2002<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 7.1pt;">
+  <td width="288" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 216.15pt; height: 7.1pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Last edited by:<o:p></o:p></span></p>
+  </td>
+  <td width="286" colspan="2" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 214.85pt; height: 7.1pt;">
+  <p class="MsoNormal" style="">Jan
+  Schenkel</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style=""><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></p>
+
+<table border="1" cellspacing="0" cellpadding="0" style="border: medium none ; border-collapse: collapse;">
+ <tbody><tr style="height: 7.1pt;">
+  <td width="575" valign="top" style="border: 0.5pt solid windowtext; padding: 0cm 3.5pt; width: 431pt; height: 7.1pt;">
+  <p class="MsoNormal" style="">Version
+  notes:</p>
+  </td>
+ </tr>
+ <tr style="height: 7.1pt;">
+  <td width="575" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 431pt; height: 7.1pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">In this third version I have tried
+  to address some of the issues that have been brought up on the discussion
+  board.<o:p></o:p></span></p>
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">For now, there is still a
+  reference to authentication in this transport protocol. Once we have worked
+  out the libIPC details, this will become a lot clearer.<o:p></o:p></span></p>
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Happy reading, Jan Schenkel.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<h1><span lang="EN-GB" style="">Introduction to STAMP<o:p></o:p></span></h1>
+
+<h2><span lang="EN-GB" style="">STAMP – the acronym<o:p></o:p></span></h2>
+
+<p class="MsoNormal" style=""><span lang="EN-GB" style="">STAMP standsfor Simple Transfer, Authentication
+and Messaging Protocol.<o:p></o:p></span></p>
+
+<table border="1" cellspacing="0" cellpadding="0" style="border: medium none ; border-collapse: collapse;">
+ <tbody><tr>
+  <td width="284" valign="top" style="border: 0.5pt solid windowtext; padding: 0cm 5.4pt; width: 213.05pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Simple<o:p></o:p></span></p>
+  </td>
+  <td width="284" valign="top" style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 0.5pt 0.5pt 0.5pt medium; padding: 0cm 5.4pt; width: 213.05pt;">
+  <ol start="1" type="1">
+   <li class="MsoNormal" style=""><span lang="EN-GB" style="">Easy to use<o:p></o:p></span></li>
+   <li class="MsoNormal" style=""><span lang="EN-GB" style="">Easy to configure<o:p></o:p></span></li>
+  </ol>
+  </td>
+ </tr>
+ <tr>
+  <td width="284" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 5.4pt; width: 213.05pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Transfer<o:p></o:p></span></p>
+  </td>
+  <td width="284" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 5.4pt; width: 213.05pt;">
+  <ol start="1" type="1">
+   <li class="MsoNormal" style=""><span lang="EN-GB" style="">Text data<o:p></o:p></span></li>
+   <li class="MsoNormal" style=""><span lang="EN-GB" style="">Binary data<o:p></o:p></span></li>
+  </ol>
+  </td>
+ </tr>
+ <tr>
+  <td width="284" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 5.4pt; width: 213.05pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Authentication<o:p></o:p></span></p>
+  </td>
+  <td width="284" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 5.4pt; width: 213.05pt;">
+  <ol start="1" type="1">
+   <li class="MsoNormal" style=""><span lang="EN-GB" style="">Authentication<o:p></o:p></span></li>
+   <li class="MsoNormal" style=""><span lang="EN-GB" style="">Encryption<o:p></o:p></span></li>
+  </ol>
+  </td>
+ </tr>
+ <tr>
+  <td width="284" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 5.4pt; width: 213.05pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Messaging<o:p></o:p></span></p>
+  </td>
+  <td width="284" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 5.4pt; width: 213.05pt;">
+  <ol start="1" type="1">
+   <li class="MsoNormal" style=""><span lang="EN-GB" style="">XML-envelope<o:p></o:p></span></li>
+   <li class="MsoNormal" style=""><span lang="EN-GB" style="">Targeted<o:p></o:p></span></li>
+  </ol>
+  </td>
+ </tr>
+</tbody></table>
+
+<h2><span lang="EN-GB" style="">STAMP – the goal<o:p></o:p></span></h2>
+
+<p class="MsoHeader"><span lang="EN-GB" style="">STAMP
+strives to enhance the communication between programs, facilitating the
+transfer of text and binary data, enabling remote procedure calls wrapped in an
+XML-envelope, incorporating authentication and encryption features.<o:p></o:p></span></p>
+
+<h2><span lang="EN-GB" style="">STAMP – the protocol<o:p></o:p></span></h2>
+
+<p class="MsoHeader"><span lang="EN-GB" style="">STAMP inits
+current form, borrows heavily from the FTP and SOAP protocols.<o:p></o:p></span></p>
+
+<h2><span lang="EN-GB" style="">STAMP - Terms of Use<o:p></o:p></span></h2>
+
+<ol start="1" type="1">
+ <li class="MsoNormal" style=""><span lang="EN-GB" style="">As it is a community-led effort, someone
+     should check what the best open-source/public-license scheme is.<o:p></o:p></span></li>
+ <li class="MsoNormal" style=""><span lang="EN-GB" style="">No royalties, no library fees<o:p></o:p></span></li>
+</ol>
+
+<h1><span lang="EN-GB" style="">Functional<o:p></o:p></span></h1>
+
+<h2><span lang="EN-GB" style="">Quick overview<o:p></o:p></span></h2>
+
+<p class="MsoNormal" style=""><span lang="EN-GB" style="">STAMP is a proposal architecture for
+the transport of data communication between applications. A connection is opened,
+authentication processed, encryption set up, and then the connection is used to
+send back and forth STAMP-streams during one or more sessions.<o:p></o:p></span></p>
+
+<table border="1" cellspacing="0" cellpadding="0" style="border: medium none ; border-collapse: collapse;">
+ <tbody><tr>
+  <td width="568" valign="top" style="border: 0.5pt solid windowtext; padding: 0cm 5.4pt; width: 426.1pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Connection<o:p></o:p></span></p>
+  <table border="1" cellspacing="0" cellpadding="0" style="border: medium none ; border-collapse: collapse;">
+   <tbody><tr>
+    <td width="552" valign="top" style="border: 0.5pt solid windowtext; padding: 0cm 5.4pt; width: 414.3pt;">
+    <p class="MsoNormal" style=""><span lang="EN-GB" style="">Session-1<o:p></o:p></span></p>
+    <table border="1" cellspacing="0" cellpadding="0" style="border: medium none ; border-collapse: collapse;">
+     <tbody><tr>
+      <td width="537" valign="top" style="border: 0.5pt solid windowtext; padding: 0cm 5.4pt; width: 403pt;">
+      <p class="MsoNormal" style=""><span lang="EN-GB" style="">Stream-1<o:p></o:p></span></p>
+      </td>
+     </tr>
+     <tr>
+      <td width="537" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 5.4pt; width: 403pt;">
+      <p class="MsoNormal" style=""><span lang="EN-GB" style="">Stream-2<o:p></o:p></span></p>
+      </td>
+     </tr>
+     <tr>
+      <td width="537" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 5.4pt; width: 403pt;">
+      <p class="MsoNormal" style=""><span lang="EN-GB" style="">Stream-3<o:p></o:p></span></p>
+      </td>
+     </tr>
+    </tbody></table>
+    <p class="MsoNormal" style=""><span lang="EN-GB" style=""><o:p></o:p></span></p>
+    </td>
+   </tr>
+   <tr>
+    <td width="552" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 5.4pt; width: 414.3pt;">
+    <p class="MsoNormal" style=""><span lang="EN-GB" style="">Session-2<o:p></o:p></span></p>
+    <table border="1" cellspacing="0" cellpadding="0" style="border: medium none ; border-collapse: collapse;">
+     <tbody><tr>
+      <td width="537" valign="top" style="border: 0.5pt solid windowtext; padding: 0cm 5.4pt; width: 402.75pt;">
+      <p class="MsoNormal" style=""><span lang="EN-GB" style="">Stream-4<o:p></o:p></span></p>
+      </td>
+     </tr>
+     <tr>
+      <td width="537" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 5.4pt; width: 402.75pt;">
+      <p class="MsoNormal" style=""><span lang="EN-GB" style="">Stream-5<o:p></o:p></span></p>
+      </td>
+     </tr>
+     <tr>
+      <td width="537" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 5.4pt; width: 402.75pt;">
+      <p class="MsoNormal" style=""><span lang="EN-GB" style="">…<o:p></o:p></span></p>
+      </td>
+     </tr>
+    </tbody></table>
+    <p class="MsoNormal" style=""><span lang="EN-GB" style=""><o:p></o:p></span></p>
+    </td>
+   </tr>
+   <tr>
+    <td width="552" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 5.4pt; width: 414.3pt;">
+    <p class="MsoNormal" style=""><span lang="EN-GB" style="">…<o:p></o:p></span></p>
+    </td>
+   </tr>
+  </tbody></table>
+  <p class="MsoNormal" style=""><span lang="EN-GB" style=""><o:p></o:p></span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<h2><span lang="EN-GB" style="">Multiple layers<o:p></o:p></span></h2>
+
+<p class="MsoNormal" style=""><span lang="EN-GB" style="">A library will provide the
+high-level access, hiding away the complexity involved in sending the streams
+back and forth, so that the developer needn’t be aware of the potential
+pitfalls of sending back and forth:<o:p></o:p></span></p>
+
+<ol start="1" type="1">
+ <li class="MsoNormal" style=""><span lang="EN-GB" style="">Text data that may have been polluted with
+     tags or reserved characters and may disrupt the XML-parsing process.<o:p></o:p></span></li>
+ <li class="MsoNormal" style=""><span lang="EN-GB" style="">Binary data that might disrupt the
+     XML-parsing process as well.<o:p></o:p></span></li>
+ <li class="MsoNormal" style=""><span lang="EN-GB" style="">XML-encoded remote procedure calls, and
+     the serialisation process required to make it work.<o:p></o:p></span></li>
+</ol>
+
+<p class="MsoNormal" style=""><span lang="EN-GB" style="">Besides the simple library handlers,
+we’ll need a series of internal handlers and functions that will<o:p></o:p></span></p>
+
+<ol start="1" type="1">
+ <li class="MsoNormal" style=""><span lang="EN-GB" style="">Translate the high-level calls into series
+     of low-level calls<o:p></o:p></span></li>
+ <li class="MsoNormal" style=""><span lang="EN-GB" style="">Provide callback handlers for the
+     communication handling<o:p></o:p></span></li>
+ <li class="MsoNormal" style=""><span lang="EN-GB" style="">Take care of the wrapping if the data and
+     the remote procedure calls<o:p></o:p></span></li>
+</ol>
+
+<p class="MsoNormal" style=""><span lang="EN-GB" style=""><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></span></p>
+
+<h1><span lang="EN-GB" style="">Technical<o:p></o:p></span></h1>
+
+<h2><span lang="EN-GB" style="">High-Level<o:p></o:p></span></h2>
+
+<p class="MsoNormal" style=""><b><span lang="EN-GB" style="">NOTE</span></b><span lang="EN-GB" style=""> This is where we’ll have to build up a
+consistent set of library handler and function names.<o:p></o:p></span></p>
+
+<h2><span lang="EN-GB" style="">Low-Level<o:p></o:p></span></h2>
+
+<h3><span lang="EN-GB" style="">The STAMP-stream structure<o:p></o:p></span></h3>
+
+<p class="MsoNormal" style=""><span lang="EN-GB" style="">All STAMP-streams start with a three
+digit code [StreamType], followed by additional parameters on the same line.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style=""><span lang="EN-GB" style="">This first line can be used to
+determine the type of the message and what data is sent after that first line,
+as well as its size <i>(always / in certain cases ?)</i>.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style=""><span lang="EN-GB" style="">Some StreamTypes have no additional
+data, others are used for XML-encoded messages, others are used to denominate
+the transfer of binary or text data.<o:p></o:p></span></p>
+
+<h3><span lang="EN-GB" style="">The StreamType code<o:p></o:p></span></h3>
+
+<p class="MsoNormal" style=""><strong><span lang="EN-US" style="">We separate the StreamType codes
+intwo halves:<o:p></o:p></span></strong></p>
+
+<p class="MsoNormal" style=""><span lang="EN-GB" style="">100 through499 are client-side
+StreamTypes<o:p></o:p></span></p>
+
+<p class="MsoNormal" style=""><span lang="EN-GB" style="">500 through899 are server-side
+StreamTypes<o:p></o:p></span></p>
+
+<p class="MsoNormal" style=""><strong><span lang="EN-US" style="">The same application can be both a client
+and a server in this protocol.<o:p></o:p></span></strong></p>
+
+<p class="MsoNormal" style=""><span lang="EN-GB" style="">In this way we avoid having to set
+up and maintain two separate socket-connections.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style=""><strong><span lang="EN-US" style="">Reserved StreamTypes<o:p></o:p></span></strong></p>
+
+<table border="1" cellspacing="0" cellpadding="0" style="border: medium none ; border-collapse: collapse;">
+ <tbody><tr>
+  <td width="307" valign="top" style="border: 0.5pt solid windowtext; padding: 0cm 3.5pt; width: 230.3pt;">
+  <p class="MsoNormal" style=""><b><span lang="EN-GB" style="">100 through 199 / 500 through 599<o:p></o:p></span></b></p>
+  </td>
+  <td width="307" valign="top" style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 0.5pt 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 230.3pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">are reserved for
+  connection-related messages<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="307" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 230.3pt;">
+  <p class="MsoNormal" style=""><b><span lang="EN-GB" style="">200 through 249 / 600 through 649<o:p></o:p></span></b></p>
+  </td>
+  <td width="307" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 230.3pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">are reserved for
+  authentication-related messages<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="307" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 230.3pt;">
+  <p class="MsoNormal" style=""><b><span lang="EN-GB" style="">250 through 299 / 650 through 699<o:p></o:p></span></b></p>
+  </td>
+  <td width="307" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 230.3pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">are reserved for
+  encryption-related messages<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="307" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 230.3pt;">
+  <p class="MsoNormal" style=""><b><span lang="EN-GB" style="">300 through 349 / 700 through 749<o:p></o:p></span></b></p>
+  </td>
+  <td width="307" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 230.3pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">are reserved for transfer of text
+  data<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="307" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 230.3pt;">
+  <p class="MsoNormal" style=""><b><span lang="EN-GB" style="">350 through 399 / 750 through 799<o:p></o:p></span></b></p>
+  </td>
+  <td width="307" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 230.3pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">are reserved for transfer of
+  binary data<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="307" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 230.3pt;">
+  <p class="MsoNormal" style=""><b><span lang="EN-GB" style="">400 through 449 / 800 through 849<o:p></o:p></span></b></p>
+  </td>
+  <td width="307" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 230.3pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">are reserved for transfer of simple
+  messages<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="307" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 230.3pt;">
+  <p class="MsoNormal" style=""><b><span lang="EN-GB" style="">450 through 499 / 850 through 899<o:p></o:p></span></b></p>
+  </td>
+  <td width="307" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 230.3pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">are reserved for transfer of XML
+  data<o:p></o:p></span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style=""><span lang="EN-GB" style=""><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></span></p>
+
+<p class="MsoNormal" style=""><strong><span lang="EN-US" style="">Why the separate codes for text, binary
+and XML data?<o:p></o:p></span></strong></p>
+
+<p class="MsoNormal" style=""><span lang="EN-GB" style="">In order to make it easier for the
+STAMP-dispatcher to parse the data sent through and decide how to process it.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style=""><span lang="EN-GB" style="">Moreover, in order to fully support
+RPC, we need a mechanism that will:<o:p></o:p></span></p>
+
+<ol start="1" type="1">
+ <li class="MsoNormal" style=""><span lang="EN-GB" style="">Send the RPC, packaged in XML<o:p></o:p></span></li>
+ <li class="MsoNormal" style=""><span lang="EN-GB" style="">Send some text and all binary data
+     separately, as they might interfere with the XML-structure<o:p></o:p></span></li>
+</ol>
+
+<p class="MsoNormal" style=""><strong><span lang="EN-US" style="">STAMP-dispatcher<o:p></o:p></span></strong></p>
+
+<p class="MsoNormal" style=""><span lang="EN-GB" style="">The STAMP-dispatcher reads the first
+line, and then leaves the rest of the handling to the correct library
+callback-handler.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style=""><span lang="EN-GB" style="">These library callback-handlers
+should send messages <i>(IPC_Event ?)</i> to the appropriate place in the message
+chain and/or call handlers and function directly in the case of RPC’s.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style=""><strong><span lang="EN-US" style="">STAMP-encryption<o:p></o:p></span></strong></p>
+
+<p class="MsoNormal" style=""><span lang="EN-GB" style="">The STAMP-protocol will contain a built-in
+encryption scheme based on two public keys that are sent through in clear text
+mode if the server requires encryption. It won’t be a complete PGP
+cryptography, but should suffice for most tasks.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style=""><span lang="EN-GB" style="">Moreover, security will be enhanced
+by calling the standard ‘compress’ command, which incidentally should allow us
+to squeeze extra network-performance for BLOB’s.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style=""><strong>STAMP-serialisation<o:p></o:p></strong></p>
+
+<p class="MsoNormal" style=""><span lang="EN-GB" style="">The STAMP-protocol will provide
+serialisation for both remote procedure calls and array data. This results in XML-RPC
+calls which look very close to SOAP-calls. However, thanks to the addition of
+text and binary BLOB’s we avoid sending through data that might interrupt the
+XML parsing process.<o:p></o:p></span></p>
+
+<h3><span lang="EN-GB" style="">Abstract session sample<o:p></o:p></span></h3>
+
+<table border="1" cellspacing="0" cellpadding="0" style="border: medium none ; border-collapse: collapse;">
+ <tbody><tr>
+  <td width="39" valign="top" style="border: 0.5pt solid windowtext; padding: 0cm 3.5pt; width: 29.5pt;">
+  <p class="MsoNormal" style=""><b><span lang="EN-GB" style="">Step<o:p></o:p></span></b></p>
+  </td>
+  <td width="51" valign="top" style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 0.5pt 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 38.35pt;">
+  <p class="MsoNormal" style=""><b><span lang="EN-GB" style="">From<o:p></o:p></span></b></p>
+  </td>
+  <td width="311" valign="top" style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 0.5pt 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 233.4pt;">
+  <p class="MsoNormal" style=""><b><span lang="EN-GB" style="">Content<o:p></o:p></span></b></p>
+  </td>
+  <td width="213" valign="top" style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 0.5pt 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 160.1pt;">
+  <p class="MsoNormal" style=""><b><span lang="EN-GB" style="">Goal<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="39" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 29.5pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">1<o:p></o:p></span></p>
+  </td>
+  <td width="51" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 38.35pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">App-1<o:p></o:p></span></p>
+  </td>
+  <td width="311" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 233.4pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">100 MY-ID=444444<o:p></o:p></span></p>
+  </td>
+  <td width="213" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 160.1pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Opening connection<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="39" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 29.5pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">2<o:p></o:p></span></p>
+  </td>
+  <td width="51" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 38.35pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">App-2<o:p></o:p></span></p>
+  </td>
+  <td width="311" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 233.4pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">500 MY-ID=555555<o:p></o:p></span></p>
+  </td>
+  <td width="213" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 160.1pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Connection accepted<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="39" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 29.5pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">3<o:p></o:p></span></p>
+  </td>
+  <td width="51" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 38.35pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">App-1<o:p></o:p></span></p>
+  </td>
+  <td width="311" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 233.4pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">200 USER-NAME=SomeOne<o:p></o:p></span></p>
+  </td>
+  <td width="213" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 160.1pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Authentication<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="39" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 29.5pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">4<o:p></o:p></span></p>
+  </td>
+  <td width="51" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 38.35pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">App-2<o:p></o:p></span></p>
+  </td>
+  <td width="311" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 233.4pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">600 ACCEPTED=SomeOne<o:p></o:p></span></p>
+  </td>
+  <td width="213" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 160.1pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Login accepted<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="39" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 29.5pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">5<o:p></o:p></span></p>
+  </td>
+  <td width="51" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 38.35pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">App-1<o:p></o:p></span></p>
+  </td>
+  <td width="311" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 233.4pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">450 XML-RPC=DoSomeThing JOB=999999<br clear="all">
+  &lt;DoSomeThing&gt;<br clear="all">
+  &lt;Param ID=“pFirstParam”&gt; <br clear="all">
+  Foo<br clear="all">
+  &lt;/Param&gt;<br clear="all">
+  &lt;Param ID=“pSecondParam”&gt; <br clear="all">
+  &lt;BLOB ID=“123456” Type=“BINARY” /&gt;<br clear="all">
+  &lt;/Param&gt;<br clear="all">
+  &lt;/DoSomeThing&gt;<o:p></o:p></span></p>
+  </td>
+  <td width="213" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 160.1pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Remote procedure call to
+  DoSomeThing in the service point in App-2 ; 999999 is the job-ID<o:p></o:p></span></p>
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">The first param is a string, sent
+  in the XML structure.<o:p></o:p></span></p>
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">The second param denominates
+  binary data, which will be processed next.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="39" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 29.5pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">6<o:p></o:p></span></p>
+  </td>
+  <td width="51" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 38.35pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">App-2<o:p></o:p></span></p>
+  </td>
+  <td width="311" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 233.4pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">350 JOB=999999 ID=123456<o:p></o:p></span></p>
+  </td>
+  <td width="213" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 160.1pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Request for the BLOB data<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="39" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 29.5pt;">
+  <p class="MsoNormal" style=""><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><span lang="EN-GB" style=""><o:p></o:p></span></p>
+  </td>
+  <td width="51" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 38.35pt;">
+  <p class="MsoNormal" style=""><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><span lang="EN-GB" style=""><o:p></o:p></span></p>
+  </td>
+  <td width="525" colspan="2" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 393.5pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Note: App-2 has temporarily
+  assumed ‘client’-role as it ‘pulls’ the data.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="39" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 29.5pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">7<o:p></o:p></span></p>
+  </td>
+  <td width="51" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 38.35pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">App-1<o:p></o:p></span></p>
+  </td>
+  <td width="311" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 233.4pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">750 JOB=999999 ID=123456
+  SIZE=77665<br clear="all">
+  [77665 bytes that form the BLOB-data]<o:p></o:p></span></p>
+  </td>
+  <td width="213" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 160.1pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">The actual BLOB data is sent now<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="39" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 29.5pt;">
+  <p class="MsoNormal" style=""><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><span lang="EN-GB" style=""><o:p></o:p></span></p>
+  </td>
+  <td width="51" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 38.35pt;">
+  <p class="MsoNormal" style=""><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><span lang="EN-GB" style=""><o:p></o:p></span></p>
+  </td>
+  <td width="525" colspan="2" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 393.5pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Note: App-1 has temporarily
+  assumed ‘server’-role as it ‘pushes’ the data.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="39" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 29.5pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">8<o:p></o:p></span></p>
+  </td>
+  <td width="51" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 38.35pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">App-2<o:p></o:p></span></p>
+  </td>
+  <td width="311" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 233.4pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">360 JOB=999999 ID=123456<o:p></o:p></span></p>
+  </td>
+  <td width="213" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 160.1pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">BLOB received<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="39" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 29.5pt;">
+  <p class="MsoNormal" style=""><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><span lang="EN-GB" style=""><o:p></o:p></span></p>
+  </td>
+  <td width="51" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 38.35pt;">
+  <p class="MsoNormal" style=""><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><span lang="EN-GB" style=""><o:p></o:p></span></p>
+  </td>
+  <td width="525" colspan="2" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 393.5pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Note: now App-2 processes the
+  procedure call ; sending it to <i>the object coupled to the service point.</i><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="39" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 29.5pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">9<o:p></o:p></span></p>
+  </td>
+  <td width="51" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 38.35pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">App-2<o:p></o:p></span></p>
+  </td>
+  <td width="311" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 233.4pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">850 XML-RPC-RESULT=OK JOB=999999<br clear="all">
+  &lt;Result&gt;<br clear="all">
+  887756ABCDE<br clear="all">
+  &lt;/Result&gt;<o:p></o:p></span></p>
+  </td>
+  <td width="213" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 160.1pt;">
+  <p class="MsoHeader" style=""><span lang="EN-GB" style="">The result of the procedure call is sent back
+  to App-1<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="39" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 29.5pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">10<o:p></o:p></span></p>
+  </td>
+  <td width="51" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 38.35pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">App-1<o:p></o:p></span></p>
+  </td>
+  <td width="311" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 233.4pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">460 JOB=999999<o:p></o:p></span></p>
+  </td>
+  <td width="213" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 160.1pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Result received<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="39" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 29.5pt;">
+  <p class="MsoNormal" style=""><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><span lang="EN-GB" style=""><o:p></o:p></span></p>
+  </td>
+  <td width="51" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 38.35pt;">
+  <p class="MsoNormal" style=""><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><span lang="EN-GB" style=""><o:p></o:p></span></p>
+  </td>
+  <td width="525" colspan="2" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 393.5pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Note: Other things may happen on
+  both sides,<span style="">&nbsp; </span>but the connection is
+  kept open.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="39" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 29.5pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">11<o:p></o:p></span></p>
+  </td>
+  <td width="51" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 38.35pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">App-1<o:p></o:p></span></p>
+  </td>
+  <td width="311" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 233.4pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">450 XML-RPC=DoArrayThing JOB=999888<br clear="all">
+  &lt;DoArrayThing&gt;<br clear="all">
+  &lt;Param ID=“pTheArray”&gt; <br clear="all">
+  &lt;Array&gt;<br clear="all">
+  &lt;Element key=“foo”&gt;<br clear="all">
+  The first element data<br clear="all">
+  &lt;/Element&gt;<br clear="all">
+  &lt;Element key=“bar”&gt;<br clear="all">
+  The second element data<br clear="all">
+  &lt;/Element&gt;<br clear="all">
+  &lt;/Array&gt;<br clear="all">
+  &lt;/Param&gt;<br clear="all">
+  &lt;/DoArrayThing&gt;<o:p></o:p></span></p>
+  </td>
+  <td width="213" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 160.1pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Remote procedure call to
+  DoSomeThing in the server stack ; 999888 is the job-ID<o:p></o:p></span></p>
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">The first param is an array, serialized
+  in the XML structure.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="39" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 29.5pt;">
+  <p class="MsoNormal" style=""><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><span lang="EN-GB" style=""><o:p></o:p></span></p>
+  </td>
+  <td width="51" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 38.35pt;">
+  <p class="MsoNormal" style=""><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><span lang="EN-GB" style=""><o:p></o:p></span></p>
+  </td>
+  <td width="525" colspan="2" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 393.5pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Note: As there are no
+  BLOB-references, no data has to be ‘pulled’.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="39" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 29.5pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">12<o:p></o:p></span></p>
+  </td>
+  <td width="51" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 38.35pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">App-2<o:p></o:p></span></p>
+  </td>
+  <td width="311" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 233.4pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">850 XML-RPC-RESULT=OK JOB=999888<br clear="all">
+  &lt;Result&gt;<br clear="all">
+  &lt;Array&gt;<br clear="all">
+  &lt;Element key=“foo”&gt;<br clear="all">
+  Something happened to the first element data<br clear="all">
+  &lt;/Element&gt;<br clear="all">
+  &lt;Element key=“bar”&gt;<br clear="all">
+  Something else could have happened to the second element data<br clear="all">
+  &lt;/Element&gt;<br clear="all">
+  &lt;/Array&gt;<br clear="all">
+  &lt;/Result&gt;<o:p></o:p></span></p>
+  </td>
+  <td width="213" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 160.1pt;">
+  <p class="MsoHeader" style=""><span lang="EN-GB" style="">The result of the procedure call is sent back
+  to App-1<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="39" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 29.5pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">13<o:p></o:p></span></p>
+  </td>
+  <td width="51" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 38.35pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">App-1<o:p></o:p></span></p>
+  </td>
+  <td width="311" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 233.4pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">460 JOB=999888<o:p></o:p></span></p>
+  </td>
+  <td width="213" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 160.1pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Result received<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="39" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 29.5pt;">
+  <p class="MsoNormal" style=""><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><span lang="EN-GB" style=""><o:p></o:p></span></p>
+  </td>
+  <td width="51" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 38.35pt;">
+  <p class="MsoNormal" style=""><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><span lang="EN-GB" style=""><o:p></o:p></span></p>
+  </td>
+  <td width="525" colspan="2" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 393.5pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Note: Now a simple message is sent
+  over from App-1 to App-2.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="39" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 29.5pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">14<o:p></o:p></span></p>
+  </td>
+  <td width="51" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 38.35pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">App-1<o:p></o:p></span></p>
+  </td>
+  <td width="311" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 233.4pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">400 MSG-TYPE=“SomeType” SIZE=27<br clear="all">
+  I think this would be nice.<o:p></o:p></span></p>
+  </td>
+  <td width="213" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 160.1pt;">
+  <p class="MsoHeader" style=""><span lang="EN-GB" style="">This will be handled by the service point’s <i>IPC_Event</i>
+  handler (?)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="39" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 29.5pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">15<o:p></o:p></span></p>
+  </td>
+  <td width="51" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 38.35pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">App-2<o:p></o:p></span></p>
+  </td>
+  <td width="311" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 233.4pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">810 MSG-RECEIVED<o:p></o:p></span></p>
+  </td>
+  <td width="213" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 160.1pt;">
+  <p class="MsoHeader" style=""><span lang="EN-GB" style="">Message received<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="39" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 29.5pt;">
+  <p class="MsoNormal" style=""><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><span lang="EN-GB" style=""><o:p></o:p></span></p>
+  </td>
+  <td width="51" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 38.35pt;">
+  <p class="MsoNormal" style=""><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><span lang="EN-GB" style=""><o:p></o:p></span></p>
+  </td>
+  <td width="525" colspan="2" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 393.5pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Note: The applications may send
+  more data over this connection.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="39" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 29.5pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">16<o:p></o:p></span></p>
+  </td>
+  <td width="51" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 38.35pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">App-1<o:p></o:p></span></p>
+  </td>
+  <td width="311" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 233.4pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">150 YOUR-ID=555555<o:p></o:p></span></p>
+  </td>
+  <td width="213" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 160.1pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Request graceful close of
+  connection<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="39" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 29.5pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">17<o:p></o:p></span></p>
+  </td>
+  <td width="51" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 38.35pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">App-2<o:p></o:p></span></p>
+  </td>
+  <td width="311" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 233.4pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">550 YOUR-ID=444444<o:p></o:p></span></p>
+  </td>
+  <td width="213" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 160.1pt;">
+  <p class="MsoNormal" style=""><span lang="EN-GB" style="">Accepted graceful close<o:p></o:p></span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal" style=""><span lang="EN-GB" style=""><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></span></p>
+
+</div>
+
+</body></html>

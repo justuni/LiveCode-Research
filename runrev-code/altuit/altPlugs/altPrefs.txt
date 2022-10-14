@@ -1,0 +1,4 @@
+<!--altPlugin3 prefs-->
+<version>v1.30</version>
+<rect>102,110,150,167</rect>
+<interface>altIconHeight,32|altIconWidth,32|altLeftBorder,4|altTopBorder,17|altRightBorder,4|altBotBorder,8|altIconHpad,4|altIconVpad,0|altHiliteButtonBorderSize,1|altAutoSize,true|altAutoUpdate,false</interface>

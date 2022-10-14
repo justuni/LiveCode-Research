@@ -1,0 +1,101 @@
+<html><head>
+  <meta name="GENERATOR" content="Adobe PageMill 2.0 Mac"><title>Turtle Graphic Vocabulary</title></head>
+<body bgcolor="#ffea18">
+
+<basefont size="4">
+<h1 align="center">Turtle Graphic Vocabulary</h1>
+
+<h1 align="center"><font size="+0"><hr></font></h1>
+
+<h3 align="center">Commands [and their abbreviations]</h3>
+
+<pre><b><font size="-2">forward</font></b><font size="-2"> 100 [fd 100]</font>
+<font size="-2">   Moves the turtle 100 pixels at the current heading.</font>
+<b><font size="-2">back</font></b><font size="-2"> 100 [bk 100]</font>
+<font size="-2">   Moves the turtle back 100 pixels at the current heading.</font>
+<b><font size="-2">right</font></b><font size="-2"> 30 [rt 30]</font>
+<font size="-2">   Rotates the turtle clockwise through a 30 degree angle.</font>
+<b><font size="-2">left</font></b><font size="-2"> 30 [lt 30]</font>
+<font size="-2">   Rotates the turtle counterclockwise through a 30 degree angle.</font>
+<b><font size="-2">setHeading</font></b><font size="-2"> 45 [seth 45]</font>
+<font size="-2">   Directs the turtle to an angle of 45 degrees. </font>
+<font size="-2">   (All angles are measured in the usual Cartesian manner, </font>
+<font size="-2">   that is counterclockwise from 3 O'clock.)</font>
+<b><font size="-2">setX</font></b><font size="-2"> 30</font>
+<font size="-2">   Moves the turtle horizontally to the coordinate x = 30.</font>
+<font size="-2">   (The vertex of the coordinate system is at the center of the window.)</font>
+<b><font size="-2">setY</font></b><font size="-2"> 40</font>
+<font size="-2">   Moves the turtle vertically to the coordinate y = 40.</font>
+<b><font size="-2">setXY</font></b><font size="-2"> 30,40</font>
+<font size="-2">   Moves the turtle to the coordinates 30,40.</font>
+<b><font size="-2">incXY</font></b><font size="-2"> 3,4</font>
+<font size="-2">   Increases the x coordinate of the turtle by 3 and the y coordinate by 4.</font></pre>
+
+<pre align="CENTER"><font size="-2"><hr></font></pre>
+
+<h3 align="center">Functions</h3>
+
+<pre><b><font size="-2">xcor( )</font></b><font size="-2">	</font>
+<font size="-2">   Returns the turtle's x coordinate.</font>
+<b><font size="-2">ycor</font></b><font size="-2">( ) 	                  </font>
+<font size="-2">   Returns the turtle's y coordinate.</font>
+<b><font size="-2">xyCor</font></b><font size="-2">( )	                </font>
+<font size="-2">   Returns a list of the turtle's x and y coordinates.</font>
+<b><font size="-2">heading</font></b><font size="-2">( )	             </font>
+<font size="-2">  Returns the turtle's heading.</font>
+<b><font size="-2">direction</font></b><font size="-2">(30,40) or <b>toward</b>(30,40)</font>
+<font size="-2">   Returns the direction of the point 30,40 from the current location of the turtle. </font>
+<font size="-2">   It does not rotate the turtle.</font>
+<b><font size="-2">distance</font></b><font size="-2">(30,40)	</font>
+<font size="-2">   Returns the distance from the current location of the turtle to the point 30,40.</font>
+<b><font size="-2">clickPoint</font></b><font size="-2">( )</font>
+<font size="-2">   Returns the x and y coordinates of the point of the mouse click</font>
+<font size="-2">   --useful in importing data into a program.</font>
+<b><font size="-2">sine</font></b><font size="-2">(a)<b>, cosine</b>(a)<b>, tangent</b>(a)</font>
+<font size="-2">   Returns the trig function of the angle <i>a</i> measured in degrees.</font>
+<b><font size="-2">arcSine</font></b><font size="-2">(x)<b>, arcCosine</b>(x)<b>, arcTangent</b>(x)</font>
+<font size="-2">   Returns the angle in degrees.<hr align="left"></font></pre>
+
+<h3 align="center">&nbsp;</h3>
+
+<h3 align="center">Miscellaneous</h3>
+
+<pre><b><font size="-2">StartTurtle</font></b><font size="-2"> [st]</font>
+<font size="-2">   Starts the turtle.  It cleans the screen, places the turtle at the origin, </font>
+<font size="-2">   facing right,and in the drawing mode.  </font>
+<font size="-2">   <b>It must precede all turtle graphics commands.</b></font>
+<b><font size="-2">home </font></b>
+<font size="-2">   Places the turtle at the origin and pointing to the right. </font>
+<b><font size="-2">setHome</font></b><font size="-2"> 30,40</font>
+<font size="-2">   Move the home position of the turtle a distance 30 to the </font>
+<font size="-2">   right of screen-center, and a distance 40 above screen-center.</font>
+<b><font size="-2">clean</font></b>
+<font size="-2">   Clears the screen but does not  affect the turtle. </font>
+<font size="-2">   It is used by StartTurtle to clear the screen. </font>
+<b><font size="-2">penUp</font></b><font size="-2"> [pu]</font>
+<font size="-2">   Raises the drawing pen. The turtle will no longer leave a track as he moves.</font>
+<b><font size="-2">penDown</font></b><font size="-2"> [pd]</font>
+<font size="-2">   Lowers the drawing pen.</font>
+<b><font size="-2">setDragTo</font></b><font size="-2"> 2 </font>
+<font size="-2">   Inserts a pause of 2 ticks (2*1/60 sec) after each drawing command. </font>
+<font size="-2">   Sometimes an object is drawn so rapidly (on faster machines) </font>
+<font size="-2">   that you can't see what happened, and you would like to slow it down. </font>
+<b><font size="-2">centeredCircle</font></b><font size="-2"> 5</font>
+<font size="-2">   Draws a circle, centered about the current turtle position, of radius 5.</font>
+<b><font size="-2">Label</font></b><font size="-2"> "x"</font>
+<font size="-2">   Prints an "x" (or whatever you place within quotes) at the current turtle location.</font>
+<b><font size="-2">StartMonkey</font></b><font size="-2"> [sm]                             </font>
+<font size="-2">   Initiates the monkey. It must precede all communication with the monkey.</font>
+<b><font size="-2">tellMonkey</font></b>
+<font size="-2">   All instructions following "tellMonkey" are addressed </font>
+<font size="-2">   to the monkey and do not affect the turtle.</font>
+<b><font size="-2">endMonkey</font></b>
+<font size="-2">   Terminates instructions to the monkey and resumes speaking to the turtle.</font>
+<b><font size="-2">pr </font></b><font size="-2">"Now is the time for all good men to come."</font>
+<font size="-2">  An abbreviation for "print." It prints the texts </font>
+<font size="-2">  that follows to the screen--not the printer.</font>
+<b><font size="-2">sci</font></b><font size="-2"> (num,sig)</font>
+<font size="-2">   Returns the input num in scientific notation with "sig"  </font>
+<font size="-2">   significant figures, e.g. sci(312345.67, 3) becomes 3.12*10^5.</font>
+<font size="-2">   (This is a valid Transcript number format.)</font></pre>
+</body></html>

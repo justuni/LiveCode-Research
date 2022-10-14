@@ -1,0 +1,641 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word 9">
+<meta name="Originator" content="Microsoft Word 9">
+<link rel="File-List" href="http://f1.grp.yahoofs.com/v1/IFRaQNc5-qZTd8APXgkr8iuKBAHwtte9D3xKfuljEAywWIbWUVkPeeG3-wiUbal-ssSZRqDmWwG000rrg1yG2JnzyvaciQ/IPC_Probe_2_bestanden/filelist.xml"><title>RevIPC – Runtime Revolution Inter-Program Communication</title><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>.</o:Author>
+  <o:LastAuthor>.</o:LastAuthor>
+  <o:Revision>7</o:Revision>
+  <o:TotalTime>303</o:TotalTime>
+  <o:Created>2002-12-22T12:08:00Z</o:Created>
+  <o:LastSaved>2002-12-22T18:20:00Z</o:LastSaved>
+  <o:Pages>5</o:Pages>
+  <o:Words>1767</o:Words>
+  <o:Characters>10077</o:Characters>
+  <o:Company>PROFESSIONAL SOFTWARE NV</o:Company>
+  <o:Lines>83</o:Lines>
+  <o:Paragraphs>20</o:Paragraphs>
+  <o:CharactersWithSpaces>12375</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Normal</w:View>
+  <w:HyphenationZone>21</w:HyphenationZone>
+ </w:WordDocument>
+</xml><![endif]-->
+
+
+<style>
+<!--
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Standaard;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:16.0pt;
+	font-family:Arial;
+	mso-font-kerning:16.0pt;}
+h2
+	{mso-style-next:Standaard;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:14.0pt;
+	font-family:Arial;
+	font-style:italic;}
+h3
+	{mso-style-next:Standaard;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:13.0pt;
+	font-family:Arial;}
+h4
+	{mso-style-next:Standaard;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	font-family:"Times New Roman";}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 70.85pt 70.85pt 70.85pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:267978309;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1901426470 -1 68354051 68354053 68354049 68354051 68354053 68354049 68354051 68354053;}
+@list l0:level1
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-18.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@list l1
+	{mso-list-id:314265521;
+	mso-list-type:hybrid;
+	mso-list-template-ids:493149386 68354063 68354073 68354075 68354063 68354073 68354075 68354063 68354073 68354075;}
+@list l2
+	{mso-list-id:526910069;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-211025842 -1 68354051 68354053 68354049 68354051 68354053 68354049 68354051 68354053;}
+@list l2:level1
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-18.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@list l3
+	{mso-list-id:1098331049;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1113340920 -1 68354051 68354053 68354049 68354051 68354053 68354049 68354051 68354053;}
+@list l3:level1
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-18.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@list l4
+	{mso-list-id:1605765861;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1208241450 -1 68354051 68354053 68354049 68354051 68354053 68354049 68354051 68354053;}
+@list l4:level1
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-18.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@list l5
+	{mso-list-id:1712456831;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1329491250 -1 68354051 68354053 68354049 68354051 68354053 68354049 68354051 68354053;}
+@list l5:level1
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-18.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style></head>
+
+<body lang="NL" style="">
+
+<div class="Section1">
+
+<table border="1" cellspacing="0" cellpadding="0" style="border: medium none ; border-collapse: collapse;">
+ <tbody><tr>
+  <td width="614" colspan="3" valign="top" style="border: 0.5pt solid windowtext; padding: 0cm 3.5pt; width: 460.6pt;">
+  <p class="MsoNormal" align="center" style="text-align: center;"><b><span lang="EN-GB" style="">RevIPC</span></b><span lang="EN-GB" style=""> – Runtime Revolution Inter-Program
+  Communication<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="307" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 230.3pt;">
+  <p class="MsoNormal"><span lang="EN-GB" style="">Contributing
+  authors:<o:p></o:p></span></p>
+  </td>
+  <td width="307" colspan="2" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 230.3pt;">
+  <p class="MsoNormal"><span lang="EN-GB" style="">Jan
+  Schenkel<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="307" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 230.3pt;">
+  <p class="MsoNormal"><span lang="EN-GB" style="">Version:<o:p></o:p></span></p>
+  </td>
+  <td width="154" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 115.15pt;">
+  <p class="MsoNormal"><span lang="EN-GB" style="">Probe 2<o:p></o:p></span></p>
+  </td>
+  <td width="154" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 115.15pt;">
+  <p class="MsoNormal"><span lang="EN-GB" style="">Dec 22<sup>nd</sup>
+  2002<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="307" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 230.3pt;">
+  <p class="MsoNormal"><span lang="EN-GB" style="">Last
+  edited by:<o:p></o:p></span></p>
+  </td>
+  <td width="307" colspan="2" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 230.3pt;">
+  <p class="MsoNormal">Jan Schenkel</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal"><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></p>
+
+<table border="1" cellspacing="0" cellpadding="0" style="border: medium none ; border-collapse: collapse;">
+ <tbody><tr>
+  <td width="614" valign="top" style="border: 0.5pt solid windowtext; padding: 0cm 3.5pt; width: 460.6pt;">
+  <p class="MsoNormal">Version notes:</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="614" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 460.6pt;">
+  <p class="MsoNormal"><span lang="EN-GB" style="">A second ‘probe’
+  into the world of RevIPC. Still horrendously incomplete of course. The next
+  version should go deeper into the client aspects, but I’ve already idnented
+  the ‘server’ part into its own chapter.<o:p></o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-GB" style="">It is
+  important that we all have the same interpretation regarding terminology, so
+  this document could be a start to cutting ourselves a nice clearing in the
+  forest of thoughts. The fact that I’ve received no complaints so far, is no
+  warranty.<o:p></o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-GB" style="">Happy
+  holidays, Jan Schenkel.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal"><span lang="EN-GB" style=""><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></span></p>
+
+<h1><span lang="EN-GB" style="">Introduction to RevIPC<o:p></o:p></span></h1>
+
+<h2><span lang="EN-GB" style="">Short overview<o:p></o:p></span></h2>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">In this
+document I’ve tried to compile my thoughts in reaction to the items discussed
+regarding Inter-Program Communication so far. I’m not even going to try and
+pretend it’s a fair nor a complete overview. I’m just trying to make sure we’re
+all on the same level.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">Hence your
+input is vital. I think I’ve got it right, but I may be misinterpreting certain
+ideas myself. So fire away if something is either unclear or I messed up
+somewhere.<o:p></o:p></span></p>
+
+<h2><span lang="EN-GB" style="">RevIPC libraries : a
+hierarchy<o:p></o:p></span></h2>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">There are
+many aspects to inter-program communication. There are different approaches,
+depending on the goals: platform-specific, network-oriented, intranet versus
+internet,...<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">To take
+these different goals into account, we’ll have to define a hierarchy of
+functions that should allow us to tackle each of the sub-problems one at<span style="">&nbsp; </span>time, without blocking the use if the parts
+that have been converted intio a usable format.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-GB" style=""><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></span></p>
+
+<table border="1" cellspacing="0" cellpadding="0" style="border: medium none ; border-collapse: collapse;">
+ <tbody><tr>
+  <td width="617" colspan="7" valign="top" style="border: 0.5pt solid windowtext; padding: 0cm 3.5pt; width: 462.55pt;">
+  <p class="MsoNormal"><b><span lang="EN-GB" style="">Table
+  1: Proposed hierarchy<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="617" colspan="7" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 462.55pt;">
+  <p class="MsoNormal" align="center" style="text-align: center;"><span lang="EN-GB" style="">Revolution Inter-Program Communication<o:p></o:p></span></p>
+  <p class="MsoNormal" align="center" style="text-align: center;"><b><span lang="EN-GB" style="">[libIPC_library]<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="88" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 65.8pt;">
+  <p class="MsoNormal" align="center" style="text-align: center;"><span lang="EN-GB" style="">AppleEvent<o:p></o:p></span></p>
+  <p class="MsoNormal" align="center" style="text-align: center;"><span lang="EN-GB" style="">MacOS<o:p></o:p></span></p>
+  </td>
+  <td width="88" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 65.8pt;">
+  <p class="MsoNormal" align="center" style="text-align: center;"><span lang="EN-GB" style="">DDE<o:p></o:p></span></p>
+  <p class="MsoNormal" align="center" style="text-align: center;"><span lang="EN-GB" style="">Windows<o:p></o:p></span></p>
+  </td>
+  <td width="88" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 65.8pt;">
+  <p class="MsoNormal" align="center" style="text-align: center;"><span lang="FR" style="">Processes<o:p></o:p></span></p>
+  <p class="MsoNormal" align="center" style="text-align: center;"><span lang="FR" style="">Un*x<o:p></o:p></span></p>
+  </td>
+  <td width="88" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 65.8pt;">
+  <p class="MsoNormal" align="center" style="text-align: center;"><span lang="EN-GB" style="">...<o:p></o:p></span></p>
+  </td>
+  <td width="88" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 65.8pt;">
+  <p class="MsoNormal" align="center" style="text-align: center;"><span lang="EN-GB" style="">File-based<o:p></o:p></span></p>
+  <p class="MsoNormal" align="center" style="text-align: center;"><b><span lang="EN-GB" style="">[?]<o:p></o:p></span></b></p>
+  </td>
+  <td width="90" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 67.75pt;">
+  <p class="MsoNormal" align="center" style="text-align: center;"><span lang="EN-GB" style="">TCP-based<o:p></o:p></span></p>
+  <p class="MsoNormal" align="center" style="text-align: center;"><b><span lang="EN-GB" style="">[libSTAMP]<o:p></o:p></span></b></p>
+  </td>
+  <td width="88" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 65.8pt;">
+  <p class="MsoNormal" align="center" style="text-align: center;"><span lang="EN-GB" style="">UDP-based<o:p></o:p></span></p>
+  <p class="MsoNormal" align="center" style="text-align: center;"><b><span lang="EN-GB" style="">[?]</span></b><span lang="EN-GB" style=""><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="263" colspan="3" valign="top" style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; padding: 0cm 3.5pt; width: 197.4pt;">
+  <p class="MsoNormal" align="center" style="text-align: center;"><span lang="EN-GB" style="">Platform-specific<o:p></o:p></span></p>
+  </td>
+  <td width="88" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 65.8pt;">
+  <p class="MsoNormal" align="center" style="text-align: center;"><span lang="EN-GB" style="">...<o:p></o:p></span></p>
+  </td>
+  <td width="266" colspan="3" valign="top" style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 0.5pt 0.5pt medium; padding: 0cm 3.5pt; width: 199.35pt;">
+  <p class="MsoNormal" align="center" style="text-align: center;"><span lang="EN-GB" style="">Platform-independent<o:p></o:p></span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal"><span lang="EN-GB" style=""><!--[if !supportEmptyParas]-->&nbsp;<!--[endif]--><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">Table 1
+describes a proposed hierarchy, whereby Revolution Inter-program Communcation
+is written in a way that allows it to use different ways of communicating
+between different programs. It should issue standardised calls to
+pre-registered libraries, so that the developer can decide which features to
+choose from which vendor in order to program his application.<o:p></o:p></span></p>
+
+<h3><span lang="EN-GB" style="">Bridges<o:p></o:p></span></h3>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">One of the
+goals of this group should be to provide the ‘bridges’ between RevIPC, which
+should be protocol-independent, and the different protocols that are available
+in either a platform-specific or a platform-independent manner. We must also
+provide ‘hooks’ so that others can add new protocols, and provide
+authentication and encryption features that are either protocol-specific or
+work transparently.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">Not only
+does this allow us to integrate better with existing applications, but it could
+also open up a market for ‘bridge’ applications that will connect a
+Windows-based application with a MacOS-only application that understands
+AppleEvents – much like Lasso did to allow web-specific applications to connect
+to FileMaker Pro databases long before that got its Web Companion.<o:p></o:p></span></p>
+
+<h3><span lang="EN-GB" style="">Protocols<o:p></o:p></span></h3>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">Platform-specific
+protocols :<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left: 72pt; text-indent: -18pt;"><!--[if !supportLists]--><span lang="EN-GB" style="">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: ;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span lang="EN-GB" style="">MacOS
+: communicating directly via AppleEvents shouldn’t prove too hard, especially if
+we build our own class ‘RIPC’ and have separate ID’s for messages, remote
+procedure calls, etc.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left: 72pt; text-indent: -18pt;"><!--[if !supportLists]--><span lang="EN-GB" style="">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: ;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span lang="EN-GB" style="">Windows
+: Dynamic Data Exchange (DDE) is deprecated, and someone should check whether
+or not we can use the DDE-externals to setup a ‘listening’ part for DDE or not
+; or does anyone have special ideas for .COM externals?<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left: 72pt; text-indent: -18pt;"><!--[if !supportLists]--><span lang="EN-GB" style="">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: ;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span lang="EN-GB" style="">Un*x :
+Process I/O is something I haven’t done before, and it sounds like there’s
+really no ‘standard’ way of packaging your data and requests but it would prove
+ideal in tying our applications with existing programs on these platforms.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">Platform-independent
+protocols :<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left: 72pt; text-indent: -18pt;"><!--[if !supportLists]--><span lang="EN-GB" style="">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: ;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span lang="EN-GB" style="">File-based
+: for some purposes, it could be easier to simple write data to a file in a
+shared directory and read that file into the other application ; advantage is
+that we’re really not depending on the presence of network-protocols.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left: 72pt; text-indent: -18pt;"><!--[if !supportLists]--><span lang="EN-GB" style="">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: ;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span lang="EN-GB" style="">TCP-based
+: so far most of our attention has gone to TCP-based communcation, and STAMP
+was defined from this perspective ; ideal in an internet-environment but not
+necessarily the most optimised.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left: 72pt; text-indent: -18pt;"><!--[if !supportLists]--><span lang="EN-GB" style="">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: ;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span lang="EN-GB" style="">UDP-based
+: for applications that are aimed at communicating over a local network and
+don’t have to rely on the sequence of the requests, UDP may be a simpler option
+than TCP.<o:p></o:p></span></p>
+
+<h1><span lang="EN-GB" style="">Perspective : server-side<o:p></o:p></span></h1>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">This part
+of the document is written from the perspective of an application that is
+offering services to other programs. In fact, it will cheerfully ignore the
+client-side of the service process.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">Any
+references to that side are for informational purposes only and not definitive
+in any way shape or form. A separate document will be supplied shortly with
+regards to the client-side in this process.<o:p></o:p></span></p>
+
+<h2><span lang="EN-GB" style="">Service points<o:p></o:p></span></h2>
+
+<h3><span lang="EN-GB" style="">Definition<o:p></o:p></span></h3>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">A service
+point is a part of an application that interfaces with other programs through a
+common protocol, offering services to those other programs that may range from
+simple event-messaging to complex remote procedure calls.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">One could
+compare it with a city hall, where you can come and ask for questions, fill in
+forms, and start certain procedures. In small cities, there’s one counter and
+it handles everything.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">In larger
+cities, there will be more than one counter, and these are usually specialised:
+one handles births, deaths and marriages ; another handles building permits ;
+etc.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">In such
+cases, there’s usually a desk where you can ask what type of service is offered
+where. And each counter will have flyers at hand describing its services, and
+forms to fill in order to use these services.<o:p></o:p></span></p>
+
+<h3><span lang="EN-GB" style="">Main service point<o:p></o:p></span></h3>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">By default,
+a “main service point” will be setup. This main service point can be asked what
+other service points there are and where ; and as it is a service point by
+definition, it can also be asked what services it offers itself.<o:p></o:p></span></p>
+
+<h3><span lang="EN-GB" style="">Additional service points<o:p></o:p></span></h3>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">You don’t
+have to deploy any additional service points, as one service point may be all
+you need. But whereas most applications will run fine with a single service
+point, there may be reasons to split up its services and divide them over
+different service points:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left: 72pt; text-indent: -18pt;"><!--[if !supportLists]--><span lang="EN-GB" style="">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: ;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span lang="EN-GB" style="">Security
+reasons, as some services are offered only to certain people, and it’s safer to
+have a security officer at each counter than at the front desk.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left: 72pt; text-indent: -18pt;"><!--[if !supportLists]--><span lang="EN-GB" style="">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: ;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span lang="EN-GB" style="">To
+make things more manageable by forming a front office for bundled services that
+act as a whole.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left: 72pt; text-indent: -18pt;"><!--[if !supportLists]--><span lang="EN-GB" style="">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: ;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span lang="EN-GB" style="">Some
+services are handled differently than others. Some require rigorous FIFO
+scheduling, others are aimed at handling all requests as fast as they can,
+regardless of when they were received.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">Nevertheless,
+all these service points can interact when the need arises, much like the city
+hall has an internal telephone system. Moreover, they can use common resources,
+much like the city hall may have a centralised library or a mail service.<o:p></o:p></span></p>
+
+<h4><i><span lang="EN-GB" style="font-size: 12pt;">Sidebar :: TCP-based protocol, service points and
+ports<o:p></o:p></span></i></h4>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">For more
+than one reason, it is easiest to say that one service point takes one port on
+the IP-address of the computer the application is running on. The main service point
+will always be in a certain range, to make discovery an acceptable task.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">Other
+service points will have ports in a different range. As stated before, the main
+service point will be able to tell on what ports the other service points can
+be talked to.<o:p></o:p></span></p>
+
+<h3><span lang="EN-GB" style="">Service points and objects<o:p></o:p></span></h3>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">The easiest
+way to bundle services, is by storing them into one object, and connecting this
+object to the service point, and thus to one port. This also allows us to more
+easily handle dispatching the requests.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">Another
+reason for this, is that it makes it easier to determine what services are
+offered on a point: a plug-in could be built to look at the script of an
+object, present the developer with a list of handlers and functions, letting
+him or her decide which are internal and adding parameter information to
+others.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">This
+service point information can easily be stored in the custom properties of the
+object itself, and handed out to potential service users in a standardised
+format. As a bonus, it makes it easier for the dispatcher to see what is and
+what is not a legitimate remote procedure call for that service point.<o:p></o:p></span></p>
+
+<h2><span lang="EN-GB" style="">Blocking and Scheduling<o:p></o:p></span></h2>
+
+<h3><span lang="EN-GB" style="">To block or not to block<o:p></o:p></span></h3>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">For some
+purposes, such as record updating in a database server, it is essential that
+the requests are processed sequentially, and that no one can access the data
+during this period in time. Other activity is put on hold until this request is
+completed, and no new requests can be started.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">Other
+services however, may be less picky about how the requests are processed, and
+will execute them as they arrive. Or other services may use a system of
+priorities, where all ‘urgent’ chores must be handled before less urgent
+chores. However, this does not stop other requests from coming in.<o:p></o:p></span></p>
+
+<h3><span lang="EN-GB" style="">Approaches to scheduling<o:p></o:p></span></h3>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">In an early
+post [message number 35], I came to a list of five approaches. This list is not
+exhaustive, but it may be all we need for our purposes.<o:p></o:p></span></p>
+
+<ol style="margin-top: 0cm;" start="1" type="1">
+ <li class="MsoNormal" style=""><span lang="EN-GB" style="">Process asap, regardless of
+     order and origin<o:p></o:p></span></li>
+ <li class="MsoNormal" style=""><span lang="EN-GB" style="">Process sequentially if from
+     the same origin<o:p></o:p></span></li>
+ <li class="MsoNormal" style=""><span lang="EN-GB" style="">Process sequentially ;
+     accepting new calls<o:p></o:p></span></li>
+ <li class="MsoNormal" style=""><span lang="EN-GB" style="">Process sequentially ; blocking
+     new calls<o:p></o:p></span></li>
+ <li class="MsoNormal" style=""><span lang="EN-GB" style="">Process according to priorities<o:p></o:p></span></li>
+</ol>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">Regardless
+of which approach is appropriate, there must be a low-level dispatcher capable
+of handling these different approaches, in order to accomodate different needs.<o:p></o:p></span></p>
+
+<h3><span lang="EN-GB" style="">Scheduling per service
+point<o:p></o:p></span></h3>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">As there
+are many different approaches to scheduling, there is probably also a need for
+mixing these approaches in one and the same application, over multiple service
+points.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">One may
+build an application where some services give priority to requests from the
+intranet, and other services just try to treat every request as soon as
+possible, regardless of origin.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">And even
+then, it may want a set of services to temporarily take over and process
+something quickly and urgently, halting the other services during this process.<o:p></o:p></span></p>
+
+<h4><i><span lang="EN-GB" style="font-size: 12pt;">Sidebar :: file-based protocol and scheduling<o:p></o:p></span></i></h4>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">A
+file-based protocol would regularly check a shared directory for the presence
+of any new files. In a priority-driven schedule, it would first check for files
+of a certain type, and handle these first ; it could go through the files in
+alphabetical order or sort the information on loast modification date, etc.<o:p></o:p></span></p>
+
+<h2><span lang="EN-GB" style="">Authentication and
+Encryption<o:p></o:p></span></h2>
+
+<h3><span lang="EN-GB" style="">Authentication<o:p></o:p></span></h3>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">A topic
+which hasn’t been discussed in much depth, is authentication. So far, we’ve
+briefly considered:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left: 72pt; text-indent: -18pt;"><!--[if !supportLists]--><span lang="EN-GB" style="">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: ;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span lang="EN-GB" style="">LDAP<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left: 72pt; text-indent: -18pt;"><!--[if !supportLists]--><span lang="EN-GB" style="">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: ;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span lang="EN-GB" style="">RADIUS<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left: 72pt; text-indent: -18pt;"><!--[if !supportLists]--><span lang="EN-GB" style="">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: ;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span lang="EN-GB" style="">Proprietary
+authentication scheme<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">Whichever
+way we go, at some point we’re going to have to pick one or more of these. It
+would be best if a few of us form a subcommittee to take the time to look into this
+matter more throughly, and describe pros and cons of each.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">Perhaps
+it’s best to shield authentication off into its own layer, so we can substitute
+one method for another, depending on the application. However, in view of the
+hierarchy proposed at the start of this document, it is very well possible that
+a developer could have to mix and match different approaches.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">For
+example, an AppleEvent scheme could require no authentication features at all,
+as the MacOS has its own simple method of accepting and rejecting remote
+connections, by allowing users to connect to programs or not. In case of a
+file-based protocol, the administrator can set user rights.<o:p></o:p></span></p>
+
+<h3><span lang="EN-GB" style="">Encryption<o:p></o:p></span></h3>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">A topic on
+which we’ve spent quite a few posts, but haven’t really decided on which way to
+go, especially as each approach has its pros and cons.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left: 72pt; text-indent: -18pt;"><!--[if !supportLists]--><span lang="EN-GB" style="">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: ;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span lang="EN-GB" style="">SSL
+[would be great, but depends on when RunRev gets this ability, and then there’s
+still the question of its server-side abilities]<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left: 72pt; text-indent: -18pt;"><!--[if !supportLists]--><span lang="EN-GB" style="">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: ;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span lang="EN-GB" style="">PGP
+[would be good, but who will implement this cryptography gem?]<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left: 72pt; text-indent: -18pt;"><!--[if !supportLists]--><span lang="EN-GB" style="">-<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: ;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span lang="EN-GB" style="">Proprietary
+encryption scheme [would be less of a hassle, and immediately available, but
+could be cracked]<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">Perhaps
+it’s best to shield encryption off into its own layer, so we can substitute one
+method for another, depending on the application. However, in view of the
+hierarchy proposed at the start of this document, it is very well possible that
+a developer could have to mix and match different approaches.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span lang="EN-GB" style="">For
+example, in a file-based protocol you wouldn’t use SSL but you could be
+interested in PGP, and for an intranet application a proprietary scheme could
+be enough whereas the internet version would need SSL.<o:p></o:p></span></p>
+
+</div>
+
+</body></html>
